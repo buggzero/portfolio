@@ -59,9 +59,7 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 .dark{background:var(--ink);color:var(--paper)}
 .rust{background:var(--rust);color:var(--paper)}
 @media (min-width:900px) and (min-height:560px){
-  .scene{position:sticky;top:0;height:100vh;clip-path:polygon(0 0,100% 9vh,100% 100%,0 100%);transition:clip-path .8s var(--ease)}
-  .scene:nth-child(even){clip-path:polygon(0 9vh,100% 0,100% 100%,0 100%)}
-  .scene:first-child,.scene.docked{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+  .scene{position:relative;height:100vh}
   .stage{position:absolute;left:50%;top:50%;width:96rem;height:54rem;transform:translate(-50%,-50%)}
   .stage > *{position:absolute;margin:0}
   .photo-grid{position:static}
@@ -93,16 +91,17 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 
 /* ---------- 1 · cover (page px / 20 = rem) ---------- */
 #hero{background:var(--paper);color:var(--paper)}
-#hero .blob{transform-origin:40% 45%}
+#hero .blob{transform-origin:50% 50%}
+#hero .blob-simple{left:1rem;top:.6rem;width:94rem;height:53rem;background:var(--ink);border-radius:34% 66% 50% 50% / 38% 40% 60% 62%;z-index:0}
 #hero .star-a{left:57.5rem;top:0;width:29rem;transform-origin:50% 55%}
 #hero .star-b{left:0;top:26rem;width:23.5rem;transform-origin:45% 50%}
 .name{font-size:14.2rem;line-height:1}
 .name span{position:absolute;display:block;white-space:nowrap;transform-origin:left center}
-.name .l1{left:11.5rem;top:3.6rem;--rot:-7deg;transform:rotate(var(--rot))}
-.name .l2{left:8.5rem;top:14.6rem;--rot:-4deg;transform:rotate(var(--rot))}
-.role{left:25.8rem;top:31.6rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.09em;font-size:1.78rem;line-height:1.3;white-space:nowrap}
-.dotline{left:34.5rem;top:37.6rem;width:10.6rem;border:0;border-top:.22rem dotted currentColor}
-.word{left:31.5rem;top:41.2rem;font-family:var(--mono);font-size:3.7rem;line-height:1}
+.name .l1{left:13rem;top:5rem;--rot:-7deg;transform:rotate(var(--rot))}
+.name .l2{left:10rem;top:16rem;--rot:-4deg;transform:rotate(var(--rot))}
+.role{left:27rem;top:32.8rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.09em;font-size:1.78rem;line-height:1.3;white-space:nowrap}
+.dotline{left:35.7rem;top:38.8rem;width:10.6rem;border:0;border-top:.22rem dotted currentColor}
+.word{left:32.7rem;top:42.2rem;font-family:var(--mono);font-size:3.7rem;line-height:1}
 
 /* ---------- 2 · about ---------- */
 #about .visual{left:-16rem;top:0;width:61rem;height:54rem;object-fit:cover}
@@ -221,7 +220,7 @@ body.lb-open{overflow:hidden}
   .stage{position:relative;display:flex;flex-direction:column;gap:18px;padding:88px 20px 48px;width:100%}
   .stage > *{position:relative!important;left:auto!important;top:auto!important;width:auto!important;height:auto!important;max-width:100%;white-space:normal!important;transform:none!important}
   .stage > img{width:100%!important;height:auto!important}
-  .full{display:none}
+  .full,#hero .blob-simple{display:none}
   #hero{background:var(--ink)}
   #hero .star-a,#hero .star-b{position:absolute!important;width:36vw!important;z-index:0}
   #hero .star-a{right:-8vw;top:60px!important}
@@ -299,7 +298,7 @@ body.lb-open{overflow:hidden}
 <!-- 1 · cover -->
 <section class="scene" id="hero" aria-label="Cover">
   <div class="stage">
-    <img class="full blob" src="img/hero-blob.png" alt="" data-anim="grow" width="2560" height="1080">
+    <div class="blob blob-simple" data-anim="grow"></div>
     <img class="star-a" src="img/hero-star-a.png" alt="" data-anim="spin" style="--d:500ms" width="580" height="440">
     <img class="star-b" src="img/hero-star-b.png" alt="" data-anim="spin" style="--d:650ms" width="470" height="560">
     <h1 class="name"><span class="l1" data-anim="drop" style="--d:250ms">Bren</span><span class="l2" data-anim="drop" style="--d:400ms">Spector</span></h1>
