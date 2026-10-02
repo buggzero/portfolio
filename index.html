@@ -102,6 +102,7 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 .role{left:27rem;top:32.8rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.09em;font-size:1.78rem;line-height:1.3;white-space:nowrap}
 .dotline{left:35.7rem;top:38.8rem;width:10.6rem;border:0;border-top:.22rem dotted currentColor}
 .word{left:32.7rem;top:42.2rem;font-family:var(--mono);font-size:3.7rem;line-height:1}
+.meta{left:32.9rem;top:46.8rem;font-family:var(--mono);font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85;white-space:nowrap}
 
 /* ---------- 2 · about ---------- */
 #about .visual{left:-16rem;top:0;width:61rem;height:54rem;object-fit:cover}
@@ -169,6 +170,7 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 #thanks .signoff{left:24.75rem;top:40.4rem;white-space:nowrap;font-family:var(--mono);text-transform:uppercase;font-size:1.6rem;line-height:1.15;letter-spacing:.04em}
 #thanks .dotline{left:39.5rem;top:43.6rem;width:9.6rem;border:0;border-top:.22rem dotted var(--ink)}
 #thanks .sig{left:52.5rem;top:41rem;font-family:var(--mono);font-size:3.8rem;line-height:1}
+#thanks .credit{left:65.5rem;top:50.6rem;width:30rem;text-align:right;font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);opacity:.7}
 #thanks .contact{left:24.75rem;top:46.6rem;display:flex;gap:.7rem;align-items:center;font-family:var(--mono);font-size:1rem}
 .contact .email{padding:.45em .9em;border:.1rem solid var(--ink);border-radius:999px;user-select:all}
 .contact button{appearance:none;border:0;background:var(--ink);color:var(--paper);font:inherit;padding:.55em 1em;border-radius:999px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;font-size:.8em}
@@ -187,6 +189,7 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 /* ---------- zoom (lightbox) ---------- */
 .zoom{cursor:zoom-in;transition:transform .35s var(--ease),box-shadow .35s}
 .zoom:hover{transform:translateY(-.3rem) scale(1.015);box-shadow:0 1.2rem 2.4rem rgba(0,0,0,.25)}
+.zoom:focus-visible{outline:.2rem solid var(--rust);outline-offset:.3rem}
 .in .zoom:hover{transform:translateY(-.3rem) scale(1.015)}
 .lightbox{position:fixed;inset:0;z-index:80;background:rgba(20,20,19,.94);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:calc(56px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));opacity:0;pointer-events:none;transition:opacity .25s}
 .lightbox.open{opacity:1;pointer-events:auto}
@@ -265,6 +268,8 @@ body.lb-open{overflow:hidden}
   #thanks .sig{font-size:1.9rem}
   #thanks .contact{flex-wrap:wrap;font-size:.85rem}
   .results{font-size:1rem}
+  .meta{font-size:.75rem;white-space:normal!important}
+  #thanks .credit{text-align:left;color:var(--ink);font-size:.7rem;margin-top:8px}
   .cue{position:absolute!important;left:50%!important;bottom:14px!important;top:auto!important;width:auto!important;transform:translateX(-50%)!important;color:var(--paper)}
   .zoom:hover{transform:none}
 }
@@ -279,15 +284,15 @@ body.lb-open{overflow:hidden}
 </header>
 
 <ul class="dots" aria-label="Pages">
-  <li><a href="#hero" aria-label="Cover" aria-current="true"></a></li>
-  <li><a href="#about" aria-label="About me"></a></li>
-  <li><a href="#how" aria-label="How I see it"></a></li>
-  <li><a href="#branding" aria-label="Branding"></a></li>
-  <li><a href="#art" aria-label="Art direction and shoots"></a></li>
-  <li><a href="#print" aria-label="Campaigns and print"></a></li>
-  <li><a href="#events" aria-label="Events and signage"></a></li>
-  <li><a href="#digital" aria-label="Digital, web and motion"></a></li>
-  <li><a href="#thanks" aria-label="Thank you"></a></li>
+  <li><a href="#hero" aria-label="Cover" title="Cover" aria-current="true"></a></li>
+  <li><a href="#about" aria-label="About me" title="About me"></a></li>
+  <li><a href="#how" aria-label="How I see it" title="How I see it"></a></li>
+  <li><a href="#branding" aria-label="Branding" title="Branding"></a></li>
+  <li><a href="#art" aria-label="Art direction and shoots" title="Art direction and shoots"></a></li>
+  <li><a href="#print" aria-label="Campaigns and print" title="Campaigns and print"></a></li>
+  <li><a href="#events" aria-label="Events and signage" title="Events and signage"></a></li>
+  <li><a href="#digital" aria-label="Digital, web and motion" title="Digital, web and motion"></a></li>
+  <li><a href="#thanks" aria-label="Thank you" title="Thank you"></a></li>
 </ul>
 
 <main class="stack">
@@ -302,6 +307,7 @@ body.lb-open{overflow:hidden}
     <p class="role" data-anim="rise" style="--d:650ms">Senior graphic designer<br>Brand campaign design</p>
     <hr class="dotline" data-anim="wipe" style="--d:850ms">
     <p class="word" data-anim="rise" style="--d:950ms">Portfolio</p>
+    <p class="meta" data-anim="rise" style="--d:1100ms">Colorado Springs &middot; EN / ES &middot; 2026</p>
     <a class="cue" href="#about" aria-label="Scroll to the next page">Scroll<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg></a>
   </div>
 </section>
@@ -309,7 +315,7 @@ body.lb-open{overflow:hidden}
 <!-- 2 · about -->
 <section class="scene cream" id="about" aria-label="About me">
   <div class="stage">
-    <img class="visual" src="img/about-visual.jpg" alt="Bren Spector smiling, in front of an orange cut-out shape" data-anim="left" width="1220" height="1080">
+    <img class="visual" src="img/about-visual.jpg" alt="Bren Spector smiling, in front of an orange cut-out shape" data-anim="left" width="1220" height="1080" loading="lazy" decoding="async">
     <h2 data-anim="drop" style="--d:200ms">About me</h2>
     <div class="text">
       <p data-anim="rise" style="--d:350ms">I design the stuff people stop for.</p>
@@ -323,9 +329,9 @@ body.lb-open{overflow:hidden}
 <!-- 3 · how i see it -->
 <section class="scene" id="how" aria-label="How I see it">
   <div class="stage">
-    <img class="full blob" src="img/how-blob.png" alt="" data-anim="grow" width="2560" height="1080">
-    <img class="cloud-a" src="img/cloud-a.png" alt="" data-anim="rise" style="--d:500ms" width="690" height="550">
-    <img class="cloud-b" src="img/cloud-b.png" alt="" data-anim="rise" style="--d:650ms" width="730" height="620">
+    <img class="full blob" src="img/how-blob.png" alt="" data-anim="grow" width="2560" height="1080" loading="lazy" decoding="async">
+    <img class="cloud-a" src="img/cloud-a.png" alt="" data-anim="rise" style="--d:500ms" width="690" height="550" loading="lazy" decoding="async">
+    <img class="cloud-b" src="img/cloud-b.png" alt="" data-anim="rise" style="--d:650ms" width="730" height="620" loading="lazy" decoding="async">
     <h2 data-anim="drop" style="--d:250ms">How I see it</h2>
     <div class="text">
       <p data-anim="rise" style="--d:400ms">Every piece has someone on the other end, and I picture them first. Maybe that's someone scrolling past a new collection on their phone, or a parent reading a flyer in a clinic waiting room with a toddler on their lap. Either way, my job is to make the important thing easy to spot and fun to look at.</p>
@@ -338,16 +344,16 @@ body.lb-open{overflow:hidden}
 <!-- 4 · recent work / branding -->
 <section class="scene cream" id="branding" aria-label="Recent work: branding">
   <div class="stage">
-    <img class="band" src="img/band.png" alt="" data-anim="grow" width="2560" height="440">
-    <img class="band-star" src="img/band-star.png" alt="" data-anim="spin" style="--d:500ms" width="290" height="340">
+    <img class="band" src="img/band.png" alt="" data-anim="grow" width="2560" height="440" loading="lazy" decoding="async">
+    <img class="band-star" src="img/band-star.png" alt="" data-anim="spin" style="--d:500ms" width="290" height="340" loading="lazy" decoding="async">
     <h2 data-anim="drop" style="--d:200ms">Recent work</h2>
     <h3 data-anim="rise" style="--d:400ms">Branding</h3>
     <p class="text" data-anim="rise" style="--d:450ms">Logos, color palettes, type, and patterns that hold together across every piece. I build the system and the templates, then roll it out so a whole team can use it with confidence. Whether you're launching something new or refreshing a look people already know, I'll make it feel like yours.</p>
-    <img class="logo-y zoom" src="img/jo-logo-yellow.jpg" data-full="img/full/logos.jpg" alt="Justice Outside logo, pale amber wordmark" data-anim="rise" style="--d:550ms" width="390" height="180">
-    <img class="logo-s zoom" src="img/jo-logo-salmon.jpg" data-full="img/full/logos.jpg" alt="Justice Outside logo, salmon wordmark" data-anim="rise" style="--d:650ms" width="390" height="170">
-    <img class="rocks zoom" src="img/jo-rocks.jpg" data-full="img/full/logos.jpg" alt="Justice Outside stacked-stones mark in full color" data-anim="rise" style="--d:600ms" width="220" height="280">
-    <img class="palette zoom" src="img/palette.png" data-full="img/palette.png" alt="Color palette: Blue Mist #99C3C5, Plum #723953, Floral White #FFF8F1, Pale Amber #E0D475, Evergreen #003030, Salmon #DC8560" data-anim="rise" style="--d:550ms" width="980" height="294">
-    <img class="patterns zoom" src="img/patterns.png" data-full="img/patterns.png" alt="Brand pattern: topographic lines on blue mist, evergreen, plum and pale amber" data-anim="rise" style="--d:700ms" width="980" height="294">
+    <img class="logo-y zoom" src="img/jo-logo-yellow.jpg" data-full="img/full/logos.jpg" alt="Justice Outside logo, pale amber wordmark" data-anim="rise" style="--d:550ms" width="390" height="180" loading="lazy" decoding="async">
+    <img class="logo-s zoom" src="img/jo-logo-salmon.jpg" data-full="img/full/logos.jpg" alt="Justice Outside logo, salmon wordmark" data-anim="rise" style="--d:650ms" width="390" height="170" loading="lazy" decoding="async">
+    <img class="rocks zoom" src="img/jo-rocks.jpg" data-full="img/full/logos.jpg" alt="Justice Outside stacked-stones mark in full color" data-anim="rise" style="--d:600ms" width="220" height="280" loading="lazy" decoding="async">
+    <img class="palette zoom" src="img/palette.png" data-full="img/palette.png" alt="Color palette: Blue Mist #99C3C5, Plum #723953, Floral White #FFF8F1, Pale Amber #E0D475, Evergreen #003030, Salmon #DC8560" data-anim="rise" style="--d:550ms" width="980" height="294" loading="lazy" decoding="async">
+    <img class="patterns zoom" src="img/patterns.png" data-full="img/patterns.png" alt="Brand pattern: topographic lines on blue mist, evergreen, plum and pale amber" data-anim="rise" style="--d:700ms" width="980" height="294" loading="lazy" decoding="async">
     <p class="caption" data-anim="rise" style="--d:850ms">Recent work: Justice Outside rebrand, with a full logo suite, six-color palette, and topographic pattern.</p>
     <p class="results" data-anim="rise" style="--d:950ms"><span class="lbl">My role</span>Led the rebrand from the logo up and built the templates my three-person team uses to keep every piece on brand.</p>
   </div>
@@ -359,10 +365,10 @@ body.lb-open{overflow:hidden}
     <h2 data-anim="left">Art direction<br>and shoots</h2>
     <p class="lede" data-anim="rise" style="--d:250ms">I plan styled shoots from the first idea to the final frame. I arrange the models and direct the look on set, so the photos feel like the brand before anyone edits them.</p>
     <div class="photo-grid">
-      <img class="photo p1 zoom" src="img/art-1.jpg" data-full="img/full/art-1.jpg" alt="Hands arranging flowers and raffia on an orange table" data-anim="rise" style="--d:350ms" width="400" height="521">
-      <img class="photo p2 zoom" src="img/art-2.jpg" data-full="img/full/art-2.jpg" alt="A young woman smiling while weaving a basket outdoors" data-anim="rise" style="--d:450ms" width="400" height="521">
-      <img class="photo p3 zoom" src="img/art-3.jpg" data-full="img/full/art-3.jpg" alt="A child seated on a blanket looking up during a park event" data-anim="rise" style="--d:550ms" width="400" height="521">
-      <img class="photo p4 zoom" src="img/art-4.jpg" data-full="img/full/art-4.jpg" alt="A facilitator talking with a participant among redwood trees" data-anim="rise" style="--d:650ms" width="400" height="521">
+      <img class="photo p1 zoom" src="img/art-1.jpg" data-full="img/full/art-1.jpg" alt="Hands arranging flowers and raffia on an orange table" data-anim="rise" style="--d:350ms" width="400" height="521" loading="lazy" decoding="async">
+      <img class="photo p2 zoom" src="img/art-2.jpg" data-full="img/full/art-2.jpg" alt="A young woman smiling while weaving a basket outdoors" data-anim="rise" style="--d:450ms" width="400" height="521" loading="lazy" decoding="async">
+      <img class="photo p3 zoom" src="img/art-3.jpg" data-full="img/full/art-3.jpg" alt="A child seated on a blanket looking up during a park event" data-anim="rise" style="--d:550ms" width="400" height="521" loading="lazy" decoding="async">
+      <img class="photo p4 zoom" src="img/art-4.jpg" data-full="img/full/art-4.jpg" alt="A facilitator talking with a participant among redwood trees" data-anim="rise" style="--d:650ms" width="400" height="521" loading="lazy" decoding="async">
     </div>
     <p class="caption" data-anim="rise" style="--d:800ms">Featured: Justice Outside EdVenture Day</p>
     <p class="results" data-anim="rise" style="--d:900ms"><span class="lbl">My role</span>Concept, shot list, model arrangement, and on-set direction.</p>
@@ -375,10 +381,10 @@ body.lb-open{overflow:hidden}
     <h2 data-anim="left">Campaigns and<br>print</h2>
     <p class="lede" data-anim="rise" style="--d:250ms">One clear idea carried across everything a campaign needs, from reports and brochures to decks and social posts. I design the pieces myself, keep the copy light, and manage the print run through delivery, in English and Spanish when your audience needs it.</p>
     <div class="photo-grid">
-      <img class="photo p1 zoom" src="img/print-1.jpg" data-full="img/full/impact-cover.jpg" alt="Cover of the 2025 Impact Report held in two hands" data-anim="rise" style="--d:350ms" width="400" height="521">
-      <img class="photo p2 zoom" src="img/print-2.jpg" data-full="img/full/impact-spread.jpg" alt="Inside spread of the Impact Report, Advocate section" data-anim="rise" style="--d:450ms" width="400" height="521">
-      <img class="photo p3 zoom" src="img/print-3.jpg" data-full="img/full/naturegap-cover.jpg" alt="The Nature Gap brochure cover" data-anim="rise" style="--d:550ms" width="400" height="521">
-      <img class="photo p4 zoom" src="img/print-4.jpg" data-full="img/full/naturegap-spread.jpg" alt="The Nature Gap brochure open to its inside panels" data-anim="rise" style="--d:650ms" width="400" height="521">
+      <img class="photo p1 zoom" src="img/print-1.jpg" data-full="img/full/impact-cover.jpg" alt="Cover of the 2025 Impact Report held in two hands" data-anim="rise" style="--d:350ms" width="400" height="521" loading="lazy" decoding="async">
+      <img class="photo p2 zoom" src="img/print-2.jpg" data-full="img/full/impact-spread.jpg" alt="Inside spread of the Impact Report, Advocate section" data-anim="rise" style="--d:450ms" width="400" height="521" loading="lazy" decoding="async">
+      <img class="photo p3 zoom" src="img/print-3.jpg" data-full="img/full/naturegap-cover.jpg" alt="The Nature Gap brochure cover" data-anim="rise" style="--d:550ms" width="400" height="521" loading="lazy" decoding="async">
+      <img class="photo p4 zoom" src="img/print-4.jpg" data-full="img/full/naturegap-spread.jpg" alt="The Nature Gap brochure open to its inside panels" data-anim="rise" style="--d:650ms" width="400" height="521" loading="lazy" decoding="async">
     </div>
     <p class="caption" data-anim="rise" style="--d:800ms">Featured: The 2025 Impact Report + The Nature Gap brochure</p>
     <p class="results" data-anim="rise" style="--d:900ms"><span class="lbl">Results</span>The Impact Report shipped with 59 handwritten funder notes and a social series built from it. The Nature Gap launch pitched 14+ national outlets and landed Inside Climate News, National Parks Traveler, and a syndicated AP story. Together, my campaigns have helped bring $3M+ into Justice Outside.</p>
@@ -388,8 +394,8 @@ body.lb-open{overflow:hidden}
 <!-- 7 · events and signage -->
 <section class="scene dark" id="events" aria-label="Events and signage">
   <div class="stage">
-    <img class="banner zoom" src="img/events-banner.jpg" data-full="img/full/banner.jpg" alt="People Powered Park Days retractable banner beside a side table" data-anim="rise" width="615" height="506">
-    <img class="rack zoom" src="img/events-rackcard.jpg" data-full="img/full/rackcard.jpg" alt="Epicentral rack card reading Looking for a new spot? on a desk with a laptop and coffee" data-anim="right" style="--d:250ms" width="657" height="723">
+    <img class="banner zoom" src="img/events-banner.jpg" data-full="img/full/banner.jpg" alt="People Powered Park Days retractable banner beside a side table" data-anim="rise" width="615" height="506" loading="lazy" decoding="async">
+    <img class="rack zoom" src="img/events-rackcard.jpg" data-full="img/full/rackcard.jpg" alt="Epicentral rack card reading Looking for a new spot? on a desk with a laptop and coffee" data-anim="right" style="--d:250ms" width="657" height="723" loading="lazy" decoding="async">
     <h2 data-anim="left" style="--d:200ms">Events and signage</h2>
     <p class="text" data-anim="rise" style="--d:350ms">Booth banners, flyers, signage, and wayfinding that work from across a room. I've made them for national tech conferences, park events in three cities, new health centers, and Epicentral, a local coworking space. Every piece looks like it belongs to its brand.</p>
     <p class="caption" data-anim="rise" style="--d:500ms">Featured: People Powered Park Days banners and Epicentral advertising rack card.</p>
@@ -404,19 +410,19 @@ body.lb-open{overflow:hidden}
     <p class="text" data-anim="rise" style="--d:250ms">Websites, landing pages, and social series that look right on every screen size. I design pages in Figma and add simple motion in After Effects. Accessibility is part of every build, from color contrast to type that's easy to read.</p>
     <p class="results" data-anim="rise" style="--d:350ms"><span class="lbl">Results</span>At Resilia, the social series and landing pages I designed helped grow Facebook engagement 43.7% against a 10% goal and the LinkedIn audience 19.5% against 8%. At Colorado OIT, I ran marketing for the myColorado Digital ID launch, work that earned nine state and national technology awards.</p>
     <p class="caption" data-anim="rise" style="--d:500ms">Justice Outside Website &middot; 2025<br>Led the redesign: content, photo direction, and page reviews. I managed the web designer who built it, trained our staff to use it, and still manage the edits.</p>
-    <img class="site zoom" src="img/site.jpg" data-full="img/full/site.jpg" alt="Justice Outside website header and hero photo of hands stacked together" data-anim="right" style="--d:300ms" width="1180" height="1015">
-    <img class="card c1 zoom" src="img/card-1.jpg" data-full="img/full/cards.jpg" alt="Website card: Community-Led Initiatives" data-anim="rise" style="--d:500ms" width="375" height="495">
-    <img class="card c2 zoom" src="img/card-2.jpg" data-full="img/full/cards.jpg" alt="Website card: Collective Action Opportunities" data-anim="rise" style="--d:620ms" width="368" height="495">
+    <img class="site zoom" src="img/site.jpg" data-full="img/full/site.jpg" alt="Justice Outside website header and hero photo of hands stacked together" data-anim="right" style="--d:300ms" width="1180" height="1015" loading="lazy" decoding="async">
+    <img class="card c1 zoom" src="img/card-1.jpg" data-full="img/full/cards.jpg" alt="Website card: Community-Led Initiatives" data-anim="rise" style="--d:500ms" width="375" height="495" loading="lazy" decoding="async">
+    <img class="card c2 zoom" src="img/card-2.jpg" data-full="img/full/cards.jpg" alt="Website card: Collective Action Opportunities" data-anim="rise" style="--d:620ms" width="368" height="495" loading="lazy" decoding="async">
   </div>
 </section>
 
 <!-- 9 · thank you -->
 <section class="scene" id="thanks" aria-label="Thank you">
   <div class="stage">
-    <img class="full blob" src="img/sand-blob.png" alt="" data-anim="grow" width="2560" height="1080">
-    <img class="tulips" src="img/tulips.png" alt="" data-anim="rise" style="--d:700ms" width="450" height="430">
-    <img class="frame" src="img/frame.png" alt="" data-anim="spin" style="--d:450ms" width="610" height="770">
-    <img class="photo" src="img/bren-outdoor.jpg" alt="Bren Spector standing in a grassy field, smiling" data-anim="right" style="--d:350ms" width="404" height="500">
+    <img class="full blob" src="img/sand-blob.png" alt="" data-anim="grow" width="2560" height="1080" loading="lazy" decoding="async">
+    <img class="tulips" src="img/tulips.png" alt="" data-anim="rise" style="--d:700ms" width="450" height="430" loading="lazy" decoding="async">
+    <img class="frame" src="img/frame.png" alt="" data-anim="spin" style="--d:450ms" width="610" height="770" loading="lazy" decoding="async">
+    <img class="photo" src="img/bren-outdoor.jpg" alt="Bren Spector standing in a grassy field, smiling" data-anim="right" style="--d:350ms" width="404" height="500" loading="lazy" decoding="async">
     <h2><span class="t1" data-anim="drop" style="--d:200ms">Thank</span><span class="t2" data-anim="drop" style="--d:350ms">you!</span></h2>
     <p class="signoff" data-anim="rise" style="--d:500ms">I hope to hear<br>from you<br>soon!</p>
     <hr class="dotline" data-anim="wipe" style="--d:650ms">
@@ -425,6 +431,7 @@ body.lb-open{overflow:hidden}
       <span class="email" id="email">brencspector@gmail.com</span>
       <button type="button" id="copyBtn">Copy email</button>
     </div>
+    <p class="credit" data-anim="rise" style="--d:900ms">Designed and built by Bren Spector</p>
   </div>
 </section>
 
@@ -434,7 +441,7 @@ body.lb-open{overflow:hidden}
   <button type="button" class="lb-close" id="lbClose">Close</button>
   <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
   <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
-  <img id="lbImg" src="" alt="">
+  <img id="lbImg" src="" alt="" loading="lazy" decoding="async">
   <figcaption id="lbCap"></figcaption>
 </div>
 
