@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Bren Spector Portfolio">
+<meta property="og:description" content="Bren Spector, senior graphic designer. Brand, campaign, print, events, digital and motion work.">
+<meta property="og:image" content="img/og.jpg">
+<link rel="icon" href="img/favicon.png" type="image/png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Bren Spector Portfolio</title>
+<meta name="description" content="Bren Spector, senior graphic designer. Brand, campaign, print, events, digital and motion work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Layout: nine pages rebuilt 1:1 from Bren's Canva deck. Each page is a 1920x1080 stage
+   (1rem = 20 slide px) scaled to fit the window, stacked and wiped over each other on scroll.
+   Shapes and doodles are the deck's own, lifted from the page exports. Phones get a flowing layout. */
+:root{
+  --ink:#212120;
+  --paper:#f8f6f1;
+  --rust:#b5652a;
+  --sand:#ded5bd;
+  --display:"Bakbak One","Arial Black",Impact,sans-serif;
+  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --mono:"Space Mono","Courier New",monospace;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:light;
+}
+html{font-size:16px;scroll-behavior:smooth}
+@media (min-width:900px) and (min-height:560px){
+  html{font-size:calc(min(100vw / 1920, 100vh / 1080) * 20)}
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+p{margin:0}
+h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-spacing:.01em;text-transform:uppercase}
+.caption{font-style:italic}
+
+/* ---------- top bar + dots (fixed px, independent of the stage scale) ---------- */
+.bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:calc(12px + env(safe-area-inset-top,0px)) 20px 12px;pointer-events:none;mix-blend-mode:difference;color:#fff;font-size:16px}
+.bar > *{pointer-events:auto}
+.brand{font-family:var(--mono);font-size:.78em;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:inherit}
+.play{appearance:none;border:1.5px solid currentColor;background:transparent;color:inherit;font-family:var(--mono);font-size:.74em;letter-spacing:.12em;text-transform:uppercase;padding:.55em 1em;border-radius:999px;cursor:pointer;display:inline-flex;gap:.5em;align-items:center}
+.play:hover,.play:focus-visible{background:#fff;color:#000;outline:none}
+.play svg{width:.7em;height:.7em;fill:currentColor}
+.dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;mix-blend-mode:difference}
+.dots a{display:block;width:9px;height:9px;border-radius:50%;border:1.5px solid #fff;background:transparent;transition:transform .3s,background .3s}
+.dots a[aria-current="true"]{background:#fff;transform:scale(1.35)}
+.dots a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+
+/* ---------- scenes + stage ---------- */
+.stack{position:relative}
+.scene{position:relative;overflow:hidden}
+.cream{background:var(--paper);color:var(--ink)}
+.dark{background:var(--ink);color:var(--paper)}
+.rust{background:var(--rust);color:var(--paper)}
+@media (min-width:900px) and (min-height:560px){
+  .scene{position:sticky;top:0;height:100vh;clip-path:polygon(0 0,100% 9vh,100% 100%,0 100%);transition:clip-path .8s var(--ease)}
+  .scene:nth-child(even){clip-path:polygon(0 9vh,100% 0,100% 100%,0 100%)}
+  .scene:first-child,.scene.docked{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+  .stage{position:absolute;left:50%;top:50%;width:96rem;height:54rem;transform:translate(-50%,-50%)}
+  .stage > *{position:absolute;margin:0}
+  .photo-grid{position:static}
+  .row .photo{position:absolute}
+  .stage > img{max-width:none;height:auto}
+  .stage > .full{left:-16rem;top:0;width:128rem;height:54rem}
+}
+
+/* ---------- entrance animations ---------- */
+[data-anim]{--d:0ms;transition:transform .9s var(--ease),opacity .7s ease;transition-delay:var(--d)}
+.in [data-anim="rise"]{transform:none;opacity:1}
+[data-anim="rise"]{transform:translateY(2.5rem);opacity:0}
+[data-anim="drop"]{transform:translateY(-4rem) rotate(calc(var(--rot,0deg) - 6deg));opacity:0}
+.in [data-anim="drop"]{transform:translateY(0) rotate(var(--rot,0deg));opacity:1}
+[data-anim="left"]{transform:translateX(-5rem);opacity:0}
+[data-anim="right"]{transform:translateX(5rem);opacity:0}
+.in [data-anim="left"],.in [data-anim="right"]{transform:none;opacity:1}
+[data-anim="grow"]{transform:scale(.25);opacity:0}
+.in [data-anim="grow"]{transform:scale(1);opacity:1}
+[data-anim="spin"]{transform:rotate(-140deg) scale(.3);opacity:0}
+.in [data-anim="spin"]{transform:rotate(0) scale(1);opacity:1}
+[data-anim="wipe"]{clip-path:inset(0 100% 0 0)}
+.in [data-anim="wipe"]{clip-path:inset(0 0 0 0);transition:clip-path 1s var(--ease);transition-delay:var(--d)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  [data-anim]{transition:none!important;transform:none!important;opacity:1!important;clip-path:none!important}
+  .scene{transition:none}
+}
+
+/* ---------- 1 · cover (page px / 20 = rem) ---------- */
+#hero{background:var(--paper);color:var(--paper)}
+#hero .blob{transform-origin:40% 45%}
+#hero .star-a{left:57.5rem;top:0;width:29rem;transform-origin:50% 55%}
+#hero .star-b{left:0;top:26rem;width:23.5rem;transform-origin:45% 50%}
+.name{font-size:14.2rem;line-height:1}
+.name span{position:absolute;display:block;white-space:nowrap;transform-origin:left center}
+.name .l1{left:11.5rem;top:3.6rem;--rot:-7deg;transform:rotate(var(--rot))}
+.name .l2{left:8.5rem;top:14.6rem;--rot:-4deg;transform:rotate(var(--rot))}
+.role{left:25.8rem;top:31.6rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.09em;font-size:1.78rem;line-height:1.3;white-space:nowrap}
+.dotline{left:34.5rem;top:37.6rem;width:10.6rem;border:0;border-top:.22rem dotted currentColor}
+.word{left:31.5rem;top:41.2rem;font-family:var(--mono);font-size:3.7rem;line-height:1}
+
+/* ---------- 2 · about ---------- */
+#about .visual{left:-16rem;top:0;width:61rem;height:54rem;object-fit:cover}
+#about h2{left:48.6rem;top:2rem;font-size:8rem;--rot:-5deg;transform:rotate(var(--rot));transform-origin:left bottom;white-space:nowrap}
+#about .text{left:48rem;top:14.4rem;width:46.2rem;font-size:1.7rem;line-height:1.38;letter-spacing:-.005em;text-align:justify;hyphens:auto;display:grid;gap:1.36em}
+#about .text p:first-child{text-align:left}
+
+/* ---------- 3 · how i see it ---------- */
+#how{background:var(--paper);color:var(--paper)}
+#how .blob{transform-origin:50% 50%}
+#how .cloud-a{left:56rem;top:3rem;width:34.5rem}
+#how .cloud-b{left:5.5rem;top:21.5rem;width:36.5rem}
+#how h2{left:0;top:9.6rem;width:96rem;text-align:center;font-size:7rem;letter-spacing:.035em}
+#how .text{left:13rem;top:19.4rem;width:70rem;font-size:1.72rem;line-height:1.36;text-align:justify;hyphens:auto;display:grid;gap:1.36em}
+
+/* ---------- 4 · recent work / branding ---------- */
+#branding .band{left:-16rem;top:0;width:128rem;transform-origin:50% 0}
+#branding .band-star{left:0;top:0;width:14.5rem;transform-origin:30% 40%}
+#branding h2{left:0;top:5.2rem;width:87.5rem;text-align:center;color:var(--paper);font-size:6.9rem;--rot:-3deg;transform:rotate(var(--rot));white-space:nowrap}
+#branding h3{left:16.8rem;top:19.6rem;font-family:var(--body);font-weight:600;font-size:3.4rem;line-height:1;letter-spacing:-.01em;text-transform:uppercase;margin:0}
+#branding .text{left:6.7rem;top:24.2rem;width:36.8rem;font-size:1.45rem;line-height:1.38;text-align:justify;hyphens:auto}
+#branding .logo-y{left:6.25rem;top:34.5rem;width:19.5rem}
+#branding .logo-s{left:6.25rem;top:43.5rem;width:19.5rem}
+#branding .rocks{left:27.5rem;top:36rem;width:11rem}
+#branding .palette{left:47.3rem;top:21.1rem;width:41.5rem}
+#branding .patterns{left:44.5rem;top:33.9rem;width:45.7rem}
+#branding .caption{left:45.9rem;top:45.9rem;width:40rem;font-size:1.45rem;line-height:1.38}
+
+/* ---------- 5/6 · photo rows ---------- */
+.row h2{font-size:3.9rem;line-height:1.05}
+.row .lede{font-size:1.45rem;line-height:1.38}
+.row .photo{top:20.7rem;width:20rem;height:26.05rem;object-fit:cover;border-radius:1.2rem}
+.row .p1{left:4.1rem}.row .p2{left:25.85rem}.row .p3{left:47.6rem}.row .p4{left:69.35rem}
+.row .caption{left:5.4rem;top:48.2rem;font-size:1.45rem}
+#art h2{left:5.4rem;top:6.1rem}
+#art .lede{left:38.4rem;top:8.3rem;width:49rem}
+#print h2{left:6.5rem;top:3.4rem}
+#print .lede{left:6.5rem;top:11.8rem;width:64.5rem}
+
+/* ---------- 7 · events ---------- */
+#events .banner{left:22.75rem;top:6rem;width:30.75rem;border-radius:1rem}
+#events .rack{left:56.65rem;top:6rem;width:32.85rem;border-radius:1rem}
+#events h2{left:5.4rem;top:33.6rem;font-size:3.9rem;white-space:nowrap}
+#events .text{left:5.4rem;top:38.1rem;width:50rem;font-size:1.45rem;line-height:1.38;text-align:justify;hyphens:auto}
+#events .caption{left:5.4rem;top:48.2rem;font-size:1.45rem}
+
+/* ---------- 8 · digital ---------- */
+#digital h2{left:5.4rem;top:6.1rem;font-size:3.9rem;line-height:1.05}
+#digital .text{left:5.4rem;top:15rem;width:47.6rem;font-size:1.45rem;line-height:1.38;text-align:justify;hyphens:auto}
+#digital .caption{left:5.4rem;top:38rem;width:19rem;font-size:1.45rem;line-height:1.38}
+#digital .site{left:55.35rem;top:1.75rem;width:59rem;box-shadow:0 1rem 2.5rem rgba(0,0,0,.12)}
+#digital .card{top:27.75rem;width:18.75rem;box-shadow:0 .6rem 2rem rgba(0,0,0,.12)}
+#digital .c1{left:28.9rem}#digital .c2{left:49.9rem;width:18.4rem}
+
+/* ---------- 9 · thank you ---------- */
+#thanks{background:var(--ink);color:var(--ink)}
+#thanks .blob{transform-origin:30% 40%}
+#thanks .tulips{left:1rem;top:32.5rem;width:22.5rem;transform-origin:50% 100%}
+#thanks .frame{left:65.5rem;top:2.5rem;width:30.5rem}
+#thanks .photo{left:73.1rem;top:9.8rem;width:20.2rem;height:25rem;object-fit:cover}
+#thanks h2{font-size:15.4rem;line-height:1}
+#thanks h2 span{position:absolute;display:block;white-space:nowrap;transform-origin:left center}
+#thanks .t1{left:8.2rem;top:5.4rem;--rot:-7deg;transform:rotate(var(--rot))}
+#thanks .t2{left:23.6rem;top:20.6rem;--rot:-4deg;transform:rotate(var(--rot))}
+#thanks .signoff{left:24.75rem;top:40.4rem;white-space:nowrap;font-family:var(--mono);text-transform:uppercase;font-size:1.6rem;line-height:1.15;letter-spacing:.04em}
+#thanks .dotline{left:39.5rem;top:43.6rem;width:9.6rem;border:0;border-top:.22rem dotted var(--ink)}
+#thanks .sig{left:52.5rem;top:41rem;font-family:var(--mono);font-size:3.8rem;line-height:1}
+#thanks .contact{left:24.75rem;top:46.6rem;display:flex;gap:.7rem;align-items:center;font-family:var(--mono);font-size:1rem}
+.contact .email{padding:.45em .9em;border:.1rem solid var(--ink);border-radius:999px;user-select:all}
+.contact button{appearance:none;border:0;background:var(--ink);color:var(--paper);font:inherit;padding:.55em 1em;border-radius:999px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;font-size:.8em}
+.contact button:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
+
+
+/* ---------- results lines ---------- */
+.results{font-size:1.05rem;line-height:1.32}
+.results .lbl{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;margin-right:.6em;opacity:.85}
+.results .lbl::after{content:' \00b7'}
+#branding .results{left:45.9rem;top:50.3rem;width:48rem}
+#art .results{left:38.4rem;top:13.8rem;width:49rem}
+#print .caption{top:47.3rem}
+#print .results{left:6.5rem;top:49.3rem;width:86rem}
+#events .caption{top:47.1rem}
+#events .results{left:5.4rem;top:49.2rem;width:86rem}
+#digital .results{left:5.4rem;top:23.6rem;width:22.6rem}
+
+/* ---------- zoom (lightbox) ---------- */
+.zoom{cursor:zoom-in;transition:transform .35s var(--ease),box-shadow .35s}
+.zoom:hover{transform:translateY(-.3rem) scale(1.015);box-shadow:0 1.2rem 2.4rem rgba(0,0,0,.25)}
+.in .zoom:hover{transform:translateY(-.3rem) scale(1.015)}
+.lightbox{position:fixed;inset:0;z-index:80;background:rgba(20,20,19,.94);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:calc(56px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));opacity:0;pointer-events:none;transition:opacity .25s}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img{max-width:min(1600px,96vw);max-height:calc(100vh - 150px);width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
+.lightbox figcaption{color:#f8f6f1;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-align:center;max-width:70ch}
+.lightbox .lb-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;appearance:none;border:1.5px solid #fff;background:transparent;color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:.6em 1em;border-radius:999px;cursor:pointer}
+.lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);appearance:none;border:0;background:rgba(255,255,255,.12);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;line-height:44px;text-align:center}
+.lightbox .lb-prev{left:16px}.lightbox .lb-next{right:16px}
+.lightbox .lb-nav:hover,.lightbox .lb-close:hover{background:#fff;color:#000}
+.lightbox .lb-nav:focus-visible,.lightbox .lb-close:focus-visible{outline:2px solid #fff;outline-offset:2px}
+body.lb-open{overflow:hidden}
+
+/* ---------- scroll cue ---------- */
+.cue{position:absolute;left:50%;bottom:.6rem;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;opacity:.9;transition:opacity .4s}
+.cue svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:cue 1.6s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.scrolled .cue{opacity:0;pointer-events:none}
+@media (prefers-reduced-motion:reduce){.cue svg{animation:none}}
+
+/* ---------- toast ---------- */
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:13px;letter-spacing:.08em;padding:.7em 1.2em;border-radius:999px;opacity:0;transition:.3s;z-index:60;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ---------- phone / short screens: pages flow, elements stack ---------- */
+@media (max-width:899px),(max-height:559px){
+  .dots{display:none}
+  .scene{min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+  .stage{position:relative;display:flex;flex-direction:column;gap:18px;padding:88px 20px 48px;width:100%}
+  .stage > *{position:relative!important;left:auto!important;top:auto!important;width:auto!important;height:auto!important;max-width:100%;white-space:normal!important;transform:none!important}
+  .stage > img{width:100%!important;height:auto!important}
+  .full{display:none}
+  #hero{background:var(--ink)}
+  #hero .star-a,#hero .star-b{position:absolute!important;width:36vw!important;z-index:0}
+  #hero .star-a{right:-8vw;top:60px!important}
+  #hero .star-b{left:-10vw!important;bottom:-8vw;top:auto!important}
+  .name{font-size:clamp(3.4rem,17vw,6rem);display:grid;z-index:1}
+  .name span{position:static!important;transform:none!important}
+  .name .l1{padding-left:.2em}
+  .role{font-size:.85rem;margin-top:12px}
+  .dotline{width:120px!important;margin:0}
+  .word{font-size:1.7rem}
+  #about .stage{padding-top:0;gap:0}
+  #about .visual{aspect-ratio:900/1080;max-height:70svh;object-fit:cover;object-position:26% bottom;margin:0 -20px;width:calc(100% + 40px)!important;max-width:none}
+  #about h2{font-size:3rem;margin:28px 0 8px;transform:rotate(-3deg)!important;transform-origin:left bottom}
+  #about .text{font-size:1.05rem;text-align:left;gap:1em}
+  #how{background:var(--ink)}
+  #how .cloud-a{position:absolute!important;width:52vw!important;right:-4vw;top:48px!important;z-index:0}
+  #how .cloud-b{display:none}
+  #how h2{font-size:2.8rem;text-align:left;z-index:1}
+  #how .text{font-size:1.05rem;text-align:left;gap:1em}
+  #branding .stage{padding-top:0}
+  #branding .band{display:block;width:calc(100% + 40px)!important;max-width:none;margin:0 -20px;height:220px!important;object-fit:cover;object-position:60% 100%}
+  #branding .band-star{display:none}
+  #branding h2{position:absolute!important;top:96px!important;left:20px!important;right:20px;font-size:2.4rem;text-align:left;transform:rotate(-2deg)!important}
+  #branding h3{font-size:1.7rem;margin-top:8px}
+  #branding .text{font-size:1rem;text-align:left}
+  #branding .logo-y,#branding .logo-s{width:min(100%,260px)!important}
+  #branding .rocks{width:120px!important}
+  #branding .caption{font-size:1rem}
+  .row h2,#events h2,#digital h2{font-size:2.4rem}
+  .row .lede,#events .text,#digital .text,#events .caption,.row .caption,#digital .caption{font-size:1rem;text-align:left}
+  .photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .row .photo{width:100%;height:auto;aspect-ratio:400/521;border-radius:10px}
+  #events .banner,#events .rack{border-radius:10px}
+  #digital .site{aspect-ratio:813/1015;object-fit:cover;object-position:left top}
+  #digital .card{width:100%!important;max-width:360px}
+  #thanks{background:var(--ink)}
+  #thanks .stage{background:var(--sand);padding-top:88px}
+  #thanks .tulips,#thanks .frame{display:none}
+  #thanks .photo{width:min(100%,320px)!important;aspect-ratio:404/500;object-fit:cover;border:10px solid var(--rust);border-radius:4px}
+  #thanks h2{font-size:3.4rem;display:grid}
+  #thanks h2 span{position:static!important;transform:none!important}
+  #thanks .t2{padding-left:.6em}
+  #thanks .signoff{font-size:.85rem;margin-top:12px}
+  #thanks .dotline{width:120px!important}
+  #thanks .sig{font-size:1.9rem}
+  #thanks .contact{flex-wrap:wrap;font-size:.85rem}
+  .results{font-size:1rem}
+  .cue{position:absolute!important;left:50%!important;bottom:14px!important;top:auto!important;width:auto!important;transform:translateX(-50%)!important;color:var(--paper)}
+  .zoom:hover{transform:none}
+}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <a class="brand" href="#hero">Bren Spector</a>
+  <button class="play" id="playBtn" type="button" aria-pressed="false"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l9 5-9 5z"/></svg><span>Play</span></button>
+</header>
+
+<ul class="dots" aria-label="Pages">
+  <li><a href="#hero" aria-label="Cover" aria-current="true"></a></li>
+  <li><a href="#about" aria-label="About me"></a></li>
+  <li><a href="#how" aria-label="How I see it"></a></li>
+  <li><a href="#branding" aria-label="Branding"></a></li>
+  <li><a href="#art" aria-label="Art direction and shoots"></a></li>
+  <li><a href="#print" aria-label="Campaigns and print"></a></li>
+  <li><a href="#events" aria-label="Events and signage"></a></li>
+  <li><a href="#digital" aria-label="Digital, web and motion"></a></li>
+  <li><a href="#thanks" aria-label="Thank you"></a></li>
+</ul>
+
+<main class="stack">
+
+<!-- 1 · cover -->
+<section class="scene" id="hero" aria-label="Cover">
+  <div class="stage">
+    <img class="full blob" src="img/hero-blob.png" alt="" data-anim="grow" width="2560" height="1080">
+    <img class="star-a" src="img/hero-star-a.png" alt="" data-anim="spin" style="--d:500ms" width="580" height="440">
+    <img class="star-b" src="img/hero-star-b.png" alt="" data-anim="spin" style="--d:650ms" width="470" height="560">
+    <h1 class="name"><span class="l1" data-anim="drop" style="--d:250ms">Bren</span><span class="l2" data-anim="drop" style="--d:400ms">Spector</span></h1>
+    <p class="role" data-anim="rise" style="--d:650ms">Senior graphic designer<br>Brand campaign design</p>
+    <hr class="dotline" data-anim="wipe" style="--d:850ms">
+    <p class="word" data-anim="rise" style="--d:950ms">Portfolio</p>
+    <a class="cue" href="#about" aria-label="Scroll to the next page">Scroll<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg></a>
+  </div>
+</section>
+
+<!-- 2 · about -->
+<section class="scene cream" id="about" aria-label="About me">
+  <div class="stage">
+    <img class="visual" src="img/about-visual.jpg" alt="Bren Spector smiling, in front of an orange cut-out shape" data-anim="left" width="1220" height="1080">
+    <h2 data-anim="drop" style="--d:200ms">About me</h2>
+    <div class="text">
+      <p data-anim="rise" style="--d:350ms">I design the stuff people stop for.</p>
+      <p data-anim="rise" style="--d:450ms">I grew up in Mexico City and have designed in English and Spanish from the start. Now I call Colorado Springs home. I'm a full-on extrovert and a proud yapper, and I'll probably ask about your weekend before we ever talk fonts.</p>
+      <p data-anim="rise" style="--d:550ms">That's on purpose. Before I open Illustrator or Canva, I want to know who you are and who you're trying to reach, so the finished piece looks and sounds like you.</p>
+      <p data-anim="rise" style="--d:650ms">In 13+ years, I've worked that way on everything from bilingual flyers at a community health center to SaaS conference booths and a full rebrand for a national environmental justice nonprofit. Come say hi. I promise to listen as much as I talk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · how i see it -->
+<section class="scene" id="how" aria-label="How I see it">
+  <div class="stage">
+    <img class="full blob" src="img/how-blob.png" alt="" data-anim="grow" width="2560" height="1080">
+    <img class="cloud-a" src="img/cloud-a.png" alt="" data-anim="rise" style="--d:500ms" width="690" height="550">
+    <img class="cloud-b" src="img/cloud-b.png" alt="" data-anim="rise" style="--d:650ms" width="730" height="620">
+    <h2 data-anim="drop" style="--d:250ms">How I see it</h2>
+    <div class="text">
+      <p data-anim="rise" style="--d:400ms">Every piece has someone on the other end, and I picture them first. Maybe that's someone scrolling past a new collection on their phone, or a parent reading a flyer in a clinic waiting room with a toddler on their lap. Either way, my job is to make the important thing easy to spot and fun to look at.</p>
+      <p data-anim="rise" style="--d:520ms">I don't do it alone. The best work I've made came out of a room full of opinions, and I like it that way. I ask a lot of questions up front, share rough versions early, and keep checking that we're still solving the right problem. Hand me a round of edits and I'll say thank you and mean it. A good note makes the piece better, and I'd rather hear it now than after it prints.</p>
+      <p data-anim="rise" style="--d:640ms">Words are part of the job too. I write and edit copy alongside the design, so the headline, the layout, and the call to action get decided together. When something's outside what I know, I say so and go find the person who does. If the parent in the waiting room reads the whole flyer, I did my job.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · recent work / branding -->
+<section class="scene cream" id="branding" aria-label="Recent work: branding">
+  <div class="stage">
+    <img class="band" src="img/band.png" alt="" data-anim="grow" width="2560" height="440">
+    <img class="band-star" src="img/band-star.png" alt="" data-anim="spin" style="--d:500ms" width="290" height="340">
+    <h2 data-anim="drop" style="--d:200ms">Recent work</h2>
+    <h3 data-anim="rise" style="--d:400ms">Branding</h3>
+    <p class="text" data-anim="rise" style="--d:450ms">Logos, color palettes, type, and patterns that hold together across every piece. I build the system and the templates, then roll it out so a whole team can use it with confidence. Whether you're launching something new or refreshing a look people already know, I'll make it feel like yours.</p>
+    <img class="logo-y zoom" src="img/jo-logo-yellow.jpg" data-full="img/full/logos.jpg" alt="Justice Outside logo, pale amber wordmark" data-anim="rise" style="--d:550ms" width="390" height="180">
+    <img class="logo-s zoom" src="img/jo-logo-salmon.jpg" data-full="img/full/logos.jpg" alt="Justice Outside logo, salmon wordmark" data-anim="rise" style="--d:650ms" width="390" height="170">
+    <img class="rocks zoom" src="img/jo-rocks.jpg" data-full="img/full/logos.jpg" alt="Justice Outside stacked-stones mark in full color" data-anim="rise" style="--d:600ms" width="220" height="280">
+    <img class="palette zoom" src="img/palette.png" data-full="img/palette.png" alt="Color palette: Blue Mist #99C3C5, Plum #723953, Floral White #FFF8F1, Pale Amber #E0D475, Evergreen #003030, Salmon #DC8560" data-anim="rise" style="--d:550ms" width="980" height="294">
+    <img class="patterns zoom" src="img/patterns.png" data-full="img/patterns.png" alt="Brand pattern: topographic lines on blue mist, evergreen, plum and pale amber" data-anim="rise" style="--d:700ms" width="980" height="294">
+    <p class="caption" data-anim="rise" style="--d:850ms">Recent work: Justice Outside rebrand, with a full logo suite, six-color palette, and topographic pattern.</p>
+    <p class="results" data-anim="rise" style="--d:950ms"><span class="lbl">My role</span>Led the rebrand from the logo up and built the templates my three-person team uses to keep every piece on brand.</p>
+  </div>
+</section>
+
+<!-- 5 · art direction -->
+<section class="scene dark row" id="art" aria-label="Art direction and shoots">
+  <div class="stage">
+    <h2 data-anim="left">Art direction<br>and shoots</h2>
+    <p class="lede" data-anim="rise" style="--d:250ms">I plan styled shoots from the first idea to the final frame. I arrange the models and direct the look on set, so the photos feel like the brand before anyone edits them.</p>
+    <p class="results" data-anim="rise" style="--d:350ms"><span class="lbl">My role</span>Concept, shot list, model arrangement, and on-set direction for Justice Outside's EdVenture Day shoot.</p>
+    <div class="photo-grid">
+      <img class="photo p1 zoom" src="img/art-1.jpg" data-full="img/full/art-1.jpg" alt="Hands arranging flowers and raffia on an orange table" data-anim="rise" style="--d:350ms" width="400" height="521">
+      <img class="photo p2 zoom" src="img/art-2.jpg" data-full="img/full/art-2.jpg" alt="A young woman smiling while weaving a basket outdoors" data-anim="rise" style="--d:450ms" width="400" height="521">
+      <img class="photo p3 zoom" src="img/art-3.jpg" data-full="img/full/art-3.jpg" alt="A child seated on a blanket looking up during a park event" data-anim="rise" style="--d:550ms" width="400" height="521">
+      <img class="photo p4 zoom" src="img/art-4.jpg" data-full="img/full/art-4.jpg" alt="A facilitator talking with a participant among redwood trees" data-anim="rise" style="--d:650ms" width="400" height="521">
+    </div>
+    <p class="caption" data-anim="rise" style="--d:800ms">Featured: Justice Outside EdVenture Day</p>
+  </div>
+</section>
+
+<!-- 6 · campaigns and print -->
+<section class="scene rust row" id="print" aria-label="Campaigns and print">
+  <div class="stage">
+    <h2 data-anim="left">Campaigns and<br>print</h2>
+    <p class="lede" data-anim="rise" style="--d:250ms">One clear idea carried across everything a campaign needs, from reports and brochures to decks and social posts. I design the pieces myself, keep the copy light, and manage the print run through delivery, in English and Spanish when your audience needs it.</p>
+    <div class="photo-grid">
+      <img class="photo p1 zoom" src="img/print-1.jpg" data-full="img/full/impact-cover.jpg" alt="Cover of the 2025 Impact Report held in two hands" data-anim="rise" style="--d:350ms" width="400" height="521">
+      <img class="photo p2 zoom" src="img/print-2.jpg" data-full="img/full/impact-spread.jpg" alt="Inside spread of the Impact Report, Advocate section" data-anim="rise" style="--d:450ms" width="400" height="521">
+      <img class="photo p3 zoom" src="img/print-3.jpg" data-full="img/full/naturegap-cover.jpg" alt="The Nature Gap brochure cover" data-anim="rise" style="--d:550ms" width="400" height="521">
+      <img class="photo p4 zoom" src="img/print-4.jpg" data-full="img/full/naturegap-spread.jpg" alt="The Nature Gap brochure open to its inside panels" data-anim="rise" style="--d:650ms" width="400" height="521">
+    </div>
+    <p class="caption" data-anim="rise" style="--d:800ms">Featured: The 2025 Impact Report + The Nature Gap brochure</p>
+    <p class="results" data-anim="rise" style="--d:900ms"><span class="lbl">Results</span>The Impact Report shipped with 59 handwritten funder notes and a social series built from it. The Nature Gap launch pitched 14+ national outlets and landed Inside Climate News, National Parks Traveler, and a syndicated AP story. Together, my campaigns have helped bring $3M+ into Justice Outside.</p>
+  </div>
+</section>
+
+<!-- 7 · events and signage -->
+<section class="scene dark" id="events" aria-label="Events and signage">
+  <div class="stage">
+    <img class="banner zoom" src="img/events-banner.jpg" data-full="img/full/banner.jpg" alt="People Powered Park Days retractable banner beside a side table" data-anim="rise" width="615" height="506">
+    <img class="rack zoom" src="img/events-rackcard.jpg" data-full="img/full/rackcard.jpg" alt="Epicentral rack card reading Looking for a new spot? on a desk with a laptop and coffee" data-anim="right" style="--d:250ms" width="657" height="723">
+    <h2 data-anim="left" style="--d:200ms">Events and signage</h2>
+    <p class="text" data-anim="rise" style="--d:350ms">Booth banners, flyers, signage, and wayfinding that work from across a room. I've made them for national tech conferences, park events in three cities, new health centers, and Epicentral, a local coworking space. Every piece looks like it belongs to its brand.</p>
+    <p class="caption" data-anim="rise" style="--d:500ms">Featured: People Powered Park Days banners and Epicentral advertising rack card.</p>
+    <p class="results" data-anim="rise" style="--d:600ms"><span class="lbl">Results</span>Park Days ran in Oceanside, Seattle, and Philadelphia with Next 100 Coalition and Trust for Public Land; I built the campaign framework and messaging guide along with the banners. At Resilia I designed the booth banners, flyers, and brochures for conference season, including the 2024 Nonprofit Technology Conference, the company's highest-lead event.</p>
+  </div>
+</section>
+
+<!-- 8 · digital, web & motion -->
+<section class="scene cream" id="digital" aria-label="Digital, web and motion">
+  <div class="stage">
+    <h2 data-anim="left">Digital, web &amp;<br>motion</h2>
+    <p class="text" data-anim="rise" style="--d:250ms">Websites, landing pages, and social series that look right on every screen size. I design pages in Figma and add simple motion in After Effects. Accessibility is part of every build, from color contrast to type that's easy to read.</p>
+    <p class="results" data-anim="rise" style="--d:350ms"><span class="lbl">Results</span>At Resilia, the social series and landing pages I designed helped grow Facebook engagement 43.7% against a 10% goal and the LinkedIn audience 19.5% against 8%. At Colorado OIT, I ran marketing for the myColorado Digital ID launch, work that earned nine state and national technology awards.</p>
+    <p class="caption" data-anim="rise" style="--d:500ms">Justice Outside Website &middot; 2025<br>Led the redesign: content, photo direction, and page reviews. I managed the web designer who built it, trained our staff to use it, and still manage the edits.</p>
+    <img class="site zoom" src="img/site.jpg" data-full="img/full/site.jpg" alt="Justice Outside website header and hero photo of hands stacked together" data-anim="right" style="--d:300ms" width="1180" height="1015">
+    <img class="card c1 zoom" src="img/card-1.jpg" data-full="img/full/cards.jpg" alt="Website card: Community-Led Initiatives" data-anim="rise" style="--d:500ms" width="375" height="495">
+    <img class="card c2 zoom" src="img/card-2.jpg" data-full="img/full/cards.jpg" alt="Website card: Collective Action Opportunities" data-anim="rise" style="--d:620ms" width="368" height="495">
+  </div>
+</section>
+
+<!-- 9 · thank you -->
+<section class="scene" id="thanks" aria-label="Thank you">
+  <div class="stage">
+    <img class="full blob" src="img/sand-blob.png" alt="" data-anim="grow" width="2560" height="1080">
+    <img class="tulips" src="img/tulips.png" alt="" data-anim="rise" style="--d:700ms" width="450" height="430">
+    <img class="frame" src="img/frame.png" alt="" data-anim="spin" style="--d:450ms" width="610" height="770">
+    <img class="photo" src="img/bren-outdoor.jpg" alt="Bren Spector standing in a grassy field, smiling" data-anim="right" style="--d:350ms" width="404" height="500">
+    <h2><span class="t1" data-anim="drop" style="--d:200ms">Thank</span><span class="t2" data-anim="drop" style="--d:350ms">you!</span></h2>
+    <p class="signoff" data-anim="rise" style="--d:500ms">I hope to hear<br>from you<br>soon!</p>
+    <hr class="dotline" data-anim="wipe" style="--d:650ms">
+    <p class="sig" data-anim="rise" style="--d:600ms">Bren</p>
+    <div class="contact" data-anim="rise" style="--d:800ms">
+      <span class="email" id="email">brencspector@gmail.com</span>
+      <button type="button" id="copyBtn">Copy email</button>
+    </div>
+  </div>
+</section>
+
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+  <button type="button" class="lb-close" id="lbClose">Close</button>
+  <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+  <img id="lbImg" src="" alt="">
+  <figcaption id="lbCap"></figcaption>
+</div>
+
+<script>
+(function(){
+  var scenes=[].slice.call(document.querySelectorAll('.scene'));
+  var dots=[].slice.call(document.querySelectorAll('.dots a'));
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var current=0, ticking=false;
+
+  function update(){
+    ticking=false;
+    var y=window.scrollY||window.pageYOffset, vh=window.innerHeight, best=0;
+    scenes.forEach(function(s,i){
+      var top=s.offsetTop;
+      if(y+vh*0.55>=top){ s.classList.add('in'); best=i; }
+      if(y>=top-vh*0.06) s.classList.add('docked'); else s.classList.remove('docked');
+    });
+    if(best!==current){
+      current=best;
+      dots.forEach(function(d,j){ if(j===best) d.setAttribute('aria-current','true'); else d.removeAttribute('aria-current'); });
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  window.addEventListener('load',update);
+  update();
+
+  function go(i){
+    i=Math.max(0,Math.min(scenes.length-1,i));
+    window.scrollTo({top:scenes[i].offsetTop,behavior:reduce?'auto':'smooth'});
+  }
+  dots.forEach(function(d,i){ d.addEventListener('click',function(ev){ ev.preventDefault(); stop(); go(i); }); });
+  document.querySelector('.brand').addEventListener('click',function(ev){ ev.preventDefault(); stop(); go(0); });
+
+  document.addEventListener('keydown',function(ev){
+    if(ev.target.tagName==='BUTTON'||ev.target.tagName==='A') return;
+    if(ev.key==='ArrowDown'||ev.key==='PageDown'||ev.key===' '){ ev.preventDefault(); stop(); go(current+1); }
+    if(ev.key==='ArrowUp'||ev.key==='PageUp'){ ev.preventDefault(); stop(); go(current-1); }
+  });
+
+  // Play: walks through the pages like the original presentation, then hands scrolling back.
+  var btn=document.getElementById('playBtn'), label=btn.querySelector('span'), timer=null, playing=false, HOLD=4600;
+  function step(){
+    if(!playing) return;
+    if(current>=scenes.length-1){ stop(); return; }
+    go(current+1);
+    timer=setTimeout(step,HOLD);
+  }
+  function start(){
+    playing=true; btn.setAttribute('aria-pressed','true'); label.textContent='Pause';
+    if(current>=scenes.length-1){ go(0); current=0; }
+    timer=setTimeout(step,current===0?2600:HOLD);
+  }
+  function stop(){
+    if(!playing) return;
+    playing=false; clearTimeout(timer); btn.setAttribute('aria-pressed','false'); label.textContent='Play';
+  }
+  btn.addEventListener('click',function(){ playing?stop():start(); });
+  ['wheel','touchstart','pointerdown'].forEach(function(t){
+    window.addEventListener(t,function(ev){ if(playing && !btn.contains(ev.target)) stop(); },{passive:true});
+  });
+
+
+  // Scroll cue hides after the first scroll.
+  window.addEventListener('scroll',function(){ if((window.scrollY||0)>40) document.body.classList.add('scrolled'); },{passive:true});
+
+  // Lightbox: click any work image to see it large; arrows move within that page's images.
+  var lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
+  var group=[], idx=0, lastFocus=null;
+  function show(i){
+    idx=(i+group.length)%group.length; var el=group[idx];
+    lbImg.src=el.getAttribute('data-full')||el.src; lbImg.alt=el.alt||''; lbCap.textContent=el.alt||'';
+    document.getElementById('lbPrev').hidden=document.getElementById('lbNext').hidden=(group.length<2);
+  }
+  function openLb(el){
+    stop(); lastFocus=el;
+    var scene=el.closest('.scene'); group=[].slice.call(scene.querySelectorAll('.zoom'));
+    // de-duplicate images that share the same enlargement
+    var seen={}; group=group.filter(function(g){ var k=g.getAttribute('data-full')||g.src; if(seen[k]) return false; seen[k]=1; return true; });
+    var k=el.getAttribute('data-full')||el.src; var start=group.findIndex(function(g){ return (g.getAttribute('data-full')||g.src)===k; });
+    lb.hidden=false; requestAnimationFrame(function(){ lb.classList.add('open'); });
+    document.body.classList.add('lb-open'); show(start<0?0:start); document.getElementById('lbClose').focus();
+  }
+  function closeLb(){
+    lb.classList.remove('open'); document.body.classList.remove('lb-open');
+    setTimeout(function(){ lb.hidden=true; lbImg.src=''; },250);
+    if(lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('.zoom').forEach(function(el){
+    el.setAttribute('tabindex','0'); el.setAttribute('role','button');
+    el.addEventListener('click',function(){ openLb(el); });
+    el.addEventListener('keydown',function(ev){ if(ev.key==='Enter'||ev.key===' '){ ev.preventDefault(); openLb(el); } });
+  });
+  document.getElementById('lbClose').addEventListener('click',closeLb);
+  document.getElementById('lbPrev').addEventListener('click',function(){ show(idx-1); });
+  document.getElementById('lbNext').addEventListener('click',function(){ show(idx+1); });
+  lb.addEventListener('click',function(ev){ if(ev.target===lb) closeLb(); });
+  document.addEventListener('keydown',function(ev){
+    if(lb.hidden) return;
+    if(ev.key==='Escape') closeLb();
+    else if(ev.key==='ArrowRight') show(idx+1);
+    else if(ev.key==='ArrowLeft') show(idx-1);
+    ev.stopImmediatePropagation();
+  },true);
+
+  // Copy email.
+  var copy=document.getElementById('copyBtn'), email=document.getElementById('email'), toast=document.getElementById('toast');
+  function say(m){ toast.textContent=m; toast.classList.add('show'); setTimeout(function(){ toast.classList.remove('show'); },1800); }
+  copy.addEventListener('click',function(){
+    var t=email.textContent.trim();
+    function select(){
+      var r=document.createRange(); r.selectNodeContents(email);
+      var s=window.getSelection(); s.removeAllRanges(); s.addRange(r); say('Select and copy the address');
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){ say('Email copied'); },select);
+    } else select();
+  });
+})();
+</script>
+
+</body>
+</html>
