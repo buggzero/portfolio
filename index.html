@@ -13,19 +13,19 @@
 <meta name="description" content="Bren Spector, senior graphic designer. Brand, print, pattern, art direction, events, and digital work.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bakbak+One&family=Archivo:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wdth,wght@0,62.5..100,400..700;1,62.5..100,400..700&family=Nunito+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap">
 <style>
 /* Layout: nine pages rebuilt 1:1 from Bren's Canva deck. Each page is a 1920x1080 stage
    (1rem = 20 slide px) scaled to fit the window, stacked and wiped over each other on scroll.
    Shapes and doodles are the deck's own, lifted from the page exports. Phones get a flowing layout. */
 :root{
-  --ink:#212120;
-  --paper:#f8f6f1;
-  --rust:#b5652a;
-  --sand:#ded5bd;
-  --display:"Bakbak One","Arial Black",Impact,sans-serif;
-  --body:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --mono:"Space Mono","Courier New",monospace;
+  --ink:#262522;
+  --paper:#F6F3EC;
+  --rust:#C2611C;
+  --sand:#F6F3EC;
+  --display:"Noto Serif Display",Georgia,serif;
+  --body:"Nunito Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"Nunito Sans","Helvetica Neue",Arial,sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
   color-scheme:light;
 }
@@ -34,20 +34,21 @@ html{font-size:16px;scroll-behavior:smooth}
   html{font-size:calc(min(100vw / 1920, 100vh / 1080) * 20)}
 }
 *,*::before,*::after{box-sizing:border-box}
-body{margin:0;background:var(--ink);color:var(--ink);font-family:var(--body);font-size:1rem;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--ink);color:var(--ink);font-family:var(--body);font-stretch:85%;font-size:1rem;line-height:1.5;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.topo{position:absolute;inset:0;background:url(img/topo.png) center/120rem auto;opacity:.13;pointer-events:none}
 img{max-width:100%;display:block}
 p{margin:0}
-h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-spacing:.01em;text-transform:uppercase}
+h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;line-height:.92;letter-spacing:-.005em}
 .caption{font-style:italic}
 
 /* ---------- top bar + dots (fixed px, independent of the stage scale) ---------- */
 .bar{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:calc(12px + env(safe-area-inset-top,0px)) 20px 12px;pointer-events:none;mix-blend-mode:difference;color:#fff;font-size:16px}
 .bar > *{pointer-events:auto}
-.brand{font-family:var(--mono);font-size:.78em;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:inherit}
-.menu{display:flex;gap:1.6em;font-family:var(--mono);font-size:.74em;letter-spacing:.14em;text-transform:uppercase}
+.brand{font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.8em;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:inherit}
+.menu{display:flex;gap:1.6em;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.76em;letter-spacing:.16em;text-transform:uppercase}
 .menu a{color:inherit;text-decoration:none;padding:.3em 0;border-bottom:1.5px solid transparent}
 .menu a:hover,.menu a:focus-visible{border-bottom-color:currentColor;outline:none}
-.play{appearance:none;border:1.5px solid currentColor;background:transparent;color:inherit;font-family:var(--mono);font-size:.74em;letter-spacing:.12em;text-transform:uppercase;padding:.55em 1em;border-radius:999px;cursor:pointer;display:inline-flex;gap:.5em;align-items:center}
+.play{appearance:none;border:1.5px solid currentColor;background:transparent;color:inherit;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.76em;letter-spacing:.12em;text-transform:uppercase;padding:.55em 1em;border-radius:999px;cursor:pointer;display:inline-flex;gap:.5em;align-items:center}
 .play:hover,.play:focus-visible{background:#fff;color:#000;outline:none}
 .play svg{width:.7em;height:.7em;fill:currentColor}
 .dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;mix-blend-mode:difference}
@@ -97,38 +98,44 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 #hero{background:var(--paper);color:var(--ink)}
 #hero .blob{transform-origin:50% 50%}
 #hero .blob-simple{left:1rem;top:.6rem;width:94rem;height:53rem;background:var(--ink);border-radius:34% 66% 50% 50% / 38% 40% 60% 62%;z-index:0}
-#hero .star-a{left:66rem;top:0;width:24rem;transform-origin:50% 55%}
+#hero .star-a{display:none}
+#hero .panel{left:60rem;top:0;width:36rem;height:54rem;background:var(--ink);overflow:hidden}
+#hero .panel .topo{position:absolute}
+#hero .panel .tag{position:absolute;left:4rem;bottom:4.2rem;color:var(--paper);font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.95rem;letter-spacing:.2em;text-transform:uppercase;line-height:1.9}
+#hero .panel .tag b{display:block;font-family:var(--display);font-stretch:62.5%;font-weight:500;font-size:3.6rem;letter-spacing:0;text-transform:none;line-height:1;margin-bottom:.6rem}
 #hero .star-b{left:0;top:26rem;width:23.5rem;transform-origin:45% 50%}
-.name{font-size:14.2rem;line-height:1}
+.name{font-size:15.4rem;line-height:.84;font-weight:500}
 .name span{position:absolute;display:block;white-space:nowrap;transform-origin:left center}
-.name .l1{left:9rem;top:7rem;--rot:-7deg;transform:rotate(var(--rot))}
-.name .l2{left:6.6rem;top:18rem;--rot:-4deg;transform:rotate(var(--rot))}
-.role{left:9.4rem;top:33.6rem;font-family:var(--mono);text-transform:uppercase;letter-spacing:.09em;font-size:1.78rem;line-height:1.3;white-space:nowrap}
-.dotline{left:9.4rem;top:39.4rem;width:10.6rem;border:0;border-top:.22rem dotted currentColor}
-.word{left:9.4rem;top:42.2rem;font-family:var(--mono);font-size:3.7rem;line-height:1}
-.meta{left:9.6rem;top:46.8rem;font-family:var(--mono);font-size:.9rem;letter-spacing:.18em;text-transform:uppercase;opacity:.85;white-space:nowrap}
+.name .l1{left:9rem;top:6.6rem;--rot:0deg}
+.name .l2{left:9rem;top:18.6rem;--rot:0deg;color:var(--rust)}
+.role{left:9.4rem;top:35.2rem;font-family:var(--mono);font-stretch:80%;font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:1.3rem;line-height:1.5;white-space:nowrap}
+.dotline{left:9.4rem;top:40.4rem;width:10.6rem;border:0;border-top:.12rem solid var(--rust)}
+.word{left:9.4rem;top:42.4rem;font-family:var(--display);font-stretch:62.5%;font-weight:500;font-size:3.9rem;line-height:1}
+.meta{left:9.5rem;top:47.4rem;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.9rem;letter-spacing:.2em;text-transform:uppercase;opacity:.8;white-space:nowrap}
 
 /* ---------- 2 · about ---------- */
 #about .visual{left:-16rem;top:0;width:61rem;height:54rem;object-fit:cover}
-#about h2{left:48.6rem;top:2rem;font-size:8rem;--rot:-5deg;transform:rotate(var(--rot));transform-origin:left bottom;white-space:nowrap}
-#about .text{left:48rem;top:14.4rem;width:46.2rem;font-size:1.7rem;line-height:1.38;letter-spacing:-.005em;text-align:justify;hyphens:manual;display:grid;gap:1.36em}
+#about h2{left:48rem;top:5rem;font-size:7rem;--rot:0deg;white-space:nowrap}
+#about .text{left:48rem;top:15.2rem;width:44rem;font-size:1.62rem;line-height:1.42;text-align:left;hyphens:manual;display:grid;gap:1.3em;padding-top:1.4rem;border-top:.12rem solid var(--rust)}
 #about .text p:first-child{text-align:left}
 
 /* ---------- 3 · how i see it ---------- */
 #how{background:var(--ink);color:var(--paper)}
 #how .blob{transform-origin:50% 50%}
-#how .cloud-a{left:60rem;top:4rem;width:30rem;opacity:.75}
+#how .cloud-a{display:none}
+#how .topo{position:absolute}
 #how .cloud-b{left:5.5rem;top:21.5rem;width:36.5rem}
-#how h2{left:9.4rem;top:9.6rem;font-size:6.4rem;letter-spacing:.03em;white-space:nowrap}
-#how .text{left:9.4rem;top:19.6rem;width:58rem;font-size:1.6rem;line-height:1.4;text-align:left;hyphens:manual;display:grid;gap:1.2em}
+#how h2{left:9.4rem;top:8.6rem;font-size:7rem;white-space:nowrap}
+#how .text{left:9.4rem;top:18.6rem;width:56rem;font-size:1.55rem;line-height:1.45;text-align:left;hyphens:manual;display:grid;gap:1.2em;padding-top:1.4rem;border-top:.12rem solid var(--rust)}
 
 /* ---------- 4 · work (flows at its own height; the only page that is not a fixed slide) ---------- */
 #work{height:auto;min-height:100vh;display:block;padding:0 0 6rem}
-.work-head{position:relative;height:22rem;overflow:hidden}
-.work-head .band{position:absolute;left:50%;top:0;width:128rem;max-width:none;height:auto;transform:translateX(-50%)}
-.work-head .band-star{position:absolute;left:0;top:0;width:14.5rem;transform-origin:30% 40%}
-.work-head h2{position:absolute;left:0;top:5rem;width:100%;text-align:center;color:var(--paper);font-size:6.9rem;--rot:-3deg;transform:rotate(var(--rot));white-space:nowrap}
-.ticker{position:absolute;left:0;right:0;top:13.4rem;overflow:hidden;color:var(--paper);font-family:var(--mono);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;opacity:.75;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.work-head{position:relative;height:20rem;overflow:hidden;background:var(--ink)}
+.work-head .topo{position:absolute}
+.work-head .band{display:none}
+.work-head .band-star{display:none}
+.work-head h2{position:absolute;left:0;top:5.2rem;width:100%;text-align:center;color:var(--paper);font-size:6.6rem;--rot:0deg;white-space:nowrap}
+.ticker{position:absolute;left:0;right:0;top:13.4rem;overflow:hidden;color:var(--paper);font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;opacity:.75;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .ticker-track{display:inline-flex;gap:3.5rem;white-space:nowrap;animation:tick 40s linear infinite;padding-left:3.5rem}
 .ticker-track span::after{content:'\00b7';margin-left:3.5rem;opacity:.6}
 @keyframes tick{to{transform:translateX(-50%)}}
@@ -136,29 +143,31 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 .work-intro{max-width:44rem;margin:4rem auto 3rem;text-align:center;font-size:1.3rem;line-height:1.5;padding:0 2rem}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:88rem;margin:0 auto;padding:0 2rem}
 .tile{margin:0;display:grid;gap:.9rem}
-.tile img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:1.1rem;display:block}
-.tile figcaption{display:grid;gap:.25rem;padding:0 .2rem}
-.t-meta{font-family:var(--mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
-.tile strong{font-family:var(--body);font-weight:600;font-size:1.35rem;line-height:1.2;letter-spacing:-.01em}
-.t-desc{font-size:1rem;line-height:1.45;color:#3b3a37}
+.tile img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:.3rem;display:block}
+.tile figcaption{display:grid;gap:.3rem;padding:.9rem .1rem 0;border-top:.12rem solid var(--ink)}
+.t-meta{font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust)}
+.tile strong{font-family:var(--display);font-stretch:62.5%;font-weight:600;font-size:1.9rem;line-height:1.05;letter-spacing:-.005em}
+.t-desc{font-size:1.02rem;line-height:1.45;color:#3b3a37}
 
 /* ---------- 9 · thank you ---------- */
 #thanks{background:var(--sand);color:var(--ink)}
 #thanks .blob{transform-origin:30% 40%}
-#thanks .tulips{left:1rem;top:32.5rem;width:22.5rem;transform-origin:50% 100%}
-#thanks .frame{left:65.5rem;top:2.5rem;width:30.5rem}
-#thanks .photo{left:73.1rem;top:9.8rem;width:20.2rem;height:25rem;object-fit:cover}
-#thanks h2{font-size:15.4rem;line-height:1}
+#thanks .tulips{display:none}
+#thanks .frame{display:none}
+#thanks .panel{left:60rem;top:0;width:36rem;height:54rem;background:var(--ink);overflow:hidden}
+#thanks .panel .topo{position:absolute}
+#thanks .photo{left:66rem;top:10rem;width:24rem;height:30rem;object-fit:cover;outline:.14rem solid var(--rust);outline-offset:.9rem}
+#thanks h2{font-size:14rem;line-height:1;font-weight:500}
 #thanks h2 span{position:absolute;display:block;white-space:nowrap;transform-origin:left center}
-#thanks .t1{left:8.2rem;top:5.4rem;--rot:-7deg;transform:rotate(var(--rot))}
-#thanks .t2{left:23.6rem;top:20.6rem;--rot:-4deg;transform:rotate(var(--rot))}
-#thanks .signoff{left:24.75rem;top:40.4rem;white-space:nowrap;font-family:var(--mono);text-transform:uppercase;font-size:1.6rem;line-height:1.15;letter-spacing:.04em}
-#thanks .dotline{left:39.5rem;top:43.6rem;width:9.6rem;border:0;border-top:.22rem dotted var(--ink)}
-#thanks .sig{left:52.5rem;top:41rem;font-family:var(--mono);font-size:3.8rem;line-height:1}
-#thanks .credit{left:65.5rem;top:50.6rem;width:30rem;text-align:right;font-family:var(--mono);font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);opacity:.6}
-#thanks .contact{left:24.75rem;top:46.6rem;display:flex;gap:.7rem;align-items:center;font-family:var(--mono);font-size:1rem}
-.contact .email{padding:.45em .9em;border:.1rem solid var(--ink);border-radius:999px;user-select:all}
-.contact button{appearance:none;border:0;background:var(--ink);color:var(--paper);font:inherit;padding:.55em 1em;border-radius:999px;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;font-size:.8em}
+#thanks .t1{left:9rem;top:6.6rem;--rot:0deg}
+#thanks .t2{left:9rem;top:18.2rem;--rot:0deg;color:var(--rust)}
+#thanks .signoff{left:9.4rem;top:36.6rem;white-space:nowrap;font-family:var(--mono);font-stretch:80%;font-weight:600;text-transform:uppercase;font-size:1.25rem;line-height:1.5;letter-spacing:.14em}
+#thanks .dotline{left:9.4rem;top:43.2rem;width:10.6rem;border:0;border-top:.12rem solid var(--rust)}
+#thanks .sig{left:30rem;top:36.4rem;font-family:var(--display);font-style:italic;font-stretch:62.5%;font-weight:500;font-size:4.4rem;line-height:1;color:var(--rust)}
+#thanks .credit{left:64rem;top:49.6rem;width:28rem;text-align:left;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper);opacity:.7}
+#thanks .contact{left:9.4rem;top:45.4rem;display:flex;gap:.7rem;align-items:center;font-family:var(--mono);font-stretch:85%;font-size:1rem}
+.contact .email{padding:.45em .9em;border:.1rem solid var(--ink);border-radius:.2rem;user-select:all}
+.contact button{appearance:none;border:0;background:var(--rust);color:var(--paper);font:inherit;font-weight:700;padding:.55em 1em;border-radius:.2rem;cursor:pointer;letter-spacing:.06em;text-transform:uppercase;font-size:.8em}
 .contact button:focus-visible{outline:2px solid var(--rust);outline-offset:2px}
 
 
@@ -179,7 +188,7 @@ h1,h2{margin:0;font-family:var(--display);font-weight:400;line-height:1;letter-s
 .lightbox{position:fixed;inset:0;z-index:80;background:rgba(20,20,19,.94);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:calc(56px + env(safe-area-inset-top,0px)) 20px calc(20px + env(safe-area-inset-bottom,0px));opacity:0;pointer-events:none;transition:opacity .25s}
 .lightbox.open{opacity:1;pointer-events:auto}
 .lightbox img{max-width:min(1600px,96vw);max-height:calc(100vh - 150px);width:auto;height:auto;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff}
-.lightbox figcaption{color:#f8f6f1;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-align:center;max-width:70ch}
+.lightbox figcaption{color:#f8f6f1;font-family:var(--mono);font-stretch:85%;font-size:13px;letter-spacing:.06em;text-align:center;max-width:70ch}
 .lightbox .lb-close{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;appearance:none;border:1.5px solid #fff;background:transparent;color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:.6em 1em;border-radius:999px;cursor:pointer}
 .lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);appearance:none;border:0;background:rgba(255,255,255,.12);color:#fff;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:20px;line-height:44px;text-align:center}
 .lightbox .lb-prev{left:16px}.lightbox .lb-next{right:16px}
@@ -207,26 +216,27 @@ body.lb-open{overflow:hidden}
   .stage > img{width:100%!important;height:auto!important}
   .full,#hero .blob-simple{display:none}
   #hero{background:var(--paper)}
-  #hero .star-a{position:absolute!important;width:36vw!important;z-index:0;right:-8vw;top:60px!important;left:auto!important}
-  .name{font-size:clamp(3.4rem,17vw,6rem);display:grid;z-index:1}
+  #hero .star-a,#hero .panel,#thanks .panel{display:none}
+  .name{font-size:clamp(3.8rem,19vw,6.6rem);display:grid;z-index:1}
   .name span{position:static!important;transform:none!important}
-  .name .l1{padding-left:.2em}
+  .name .l1{padding-left:0}
   .role{font-size:.85rem;margin-top:12px}
   .dotline{width:120px!important;margin:0}
   .word{font-size:1.7rem}
   #about .stage{padding-top:0;gap:0}
   #about .visual{aspect-ratio:900/1080;max-height:70svh;object-fit:cover;object-position:26% bottom;margin:0 -20px;width:calc(100% + 40px)!important;max-width:none}
-  #about h2{font-size:3rem;margin:28px 0 8px;transform:rotate(-3deg)!important;transform-origin:left bottom}
+  #about h2{font-size:3rem;margin:28px 0 8px}
   #about .text{font-size:1.05rem;text-align:left;gap:1em}
   #how{background:var(--ink)}
-  #how .cloud-a{position:absolute!important;width:52vw!important;right:-4vw;top:48px!important;z-index:0}
+  #how .cloud-a{display:none}
+  .topo{position:absolute!important;background-size:900px auto}
   #how .cloud-b{display:none}
   #how h2{font-size:2.8rem;text-align:left;z-index:1}
   #how .text{font-size:1.05rem;text-align:left;gap:1em}
   #thanks{background:var(--sand)}
   #thanks .stage{background:var(--sand);padding-top:88px}
   #thanks .tulips,#thanks .frame{display:none}
-  #thanks .photo{width:min(100%,320px)!important;aspect-ratio:404/500;object-fit:cover;border:10px solid var(--rust);border-radius:4px}
+  #thanks .photo{width:min(100%,320px)!important;aspect-ratio:404/500;object-fit:cover;outline:2px solid var(--rust);outline-offset:8px;margin:8px}
   #thanks h2{font-size:3.4rem;display:grid}
   #thanks h2 span{position:static!important;transform:none!important}
   #thanks .t2{padding-left:.6em}
@@ -236,16 +246,16 @@ body.lb-open{overflow:hidden}
   #thanks .contact{flex-wrap:wrap;font-size:.85rem}
   .menu{display:none}
   #work{padding:0 0 48px}
-  .work-head{height:200px;margin:0}
+  .work-head{height:180px;margin:0}
   .work-head .band{width:auto;min-width:100%;height:100%;left:50%;object-fit:cover;object-position:center bottom}
   .work-head .band-star{display:none}
-  .work-head h2{top:84px;font-size:2.4rem;white-space:normal;padding:0 20px;transform:rotate(-2deg)!important;text-align:left}
+  .work-head h2{top:72px;font-size:2.6rem;white-space:normal;padding:0 20px;text-align:left}
   .ticker{display:none}
   .work-intro{font-size:1.05rem;margin:28px auto 20px;text-align:left}
   .grid{grid-template-columns:1fr;gap:28px;padding:0 20px}
   .tile strong{font-size:1.15rem}
   .meta{font-size:.75rem;white-space:normal!important}
-  #thanks .credit{text-align:left;color:var(--ink);font-size:.7rem;margin-top:8px}
+  #thanks .credit{text-align:left;color:var(--ink);font-size:.7rem;margin-top:8px;opacity:.6}
   .cue{position:absolute!important;left:50%!important;bottom:14px!important;top:auto!important;width:auto!important;transform:translateX(-50%)!important;color:var(--paper)}
   .zoom:hover{transform:none}
 }
@@ -270,7 +280,7 @@ body.lb-open{overflow:hidden}
 <!-- 1 · cover -->
 <section class="scene" id="hero" aria-label="Cover">
   <div class="stage">
-    <img class="star-a" src="img/hero-star-a.png" alt="" data-anim="spin" style="--d:500ms" width="580" height="440">
+    <div class="panel" data-anim="right" style="--d:300ms"><div class="topo"></div><p class="tag"><b>Brand, print &amp; art direction</b>Ten pieces &middot; 2013 to 2026</p></div>
     <h1 class="name"><span class="l1" data-anim="drop" style="--d:250ms">Bren</span><span class="l2" data-anim="drop" style="--d:400ms">Spector</span></h1>
     <p class="role" data-anim="rise" style="--d:650ms">Senior graphic designer<br>Brand, print &amp; art direction</p>
     <hr class="dotline" data-anim="wipe" style="--d:850ms">
@@ -297,7 +307,7 @@ body.lb-open{overflow:hidden}
 <!-- 3 · how i see it -->
 <section class="scene" id="how" aria-label="How I see it">
   <div class="stage">
-    <img class="cloud-a" src="img/cloud-a.png" alt="" data-anim="rise" style="--d:500ms" width="690" height="550" loading="lazy" decoding="async">
+    <div class="topo"></div>
     <h2 data-anim="drop" style="--d:250ms">How I see it</h2>
     <div class="text">
       <p data-anim="rise" style="--d:400ms">Every piece has someone on the other end, and I picture them first. Maybe that's someone scrolling past a new collection on their phone, or a parent reading a flyer in a clinic waiting room with a toddler on their lap. Either way, my job is to make the important thing easy to spot and fun to look at. And I like work people can hold.</p>
@@ -310,8 +320,7 @@ body.lb-open{overflow:hidden}
 <!-- 4 · work -->
 <section class="scene cream flow" id="work" aria-label="Recent work">
   <div class="work-head">
-    <img class="band" src="img/band.png" alt="" width="2560" height="440" loading="lazy" decoding="async">
-    <img class="band-star" src="img/band-star.png" alt="" data-anim="spin" style="--d:400ms" width="290" height="340" loading="lazy" decoding="async">
+    <div class="topo"></div>
     <h2 data-anim="drop" style="--d:150ms">Recent work</h2>
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Brand</span><span>Patterns &amp; product</span><span>Campaigns</span><span>Print</span><span>Art direction</span><span>Events &amp; signage</span><span>Digital &amp; motion</span><span>English &amp; Spanish</span><span>Brand</span><span>Patterns &amp; product</span><span>Campaigns</span><span>Print</span><span>Art direction</span><span>Events &amp; signage</span><span>Digital &amp; motion</span><span>English &amp; Spanish</span></div></div>
   </div>
@@ -363,8 +372,7 @@ body.lb-open{overflow:hidden}
 <!-- 9 · thank you -->
 <section class="scene" id="thanks" aria-label="Thank you">
   <div class="stage">
-    <img class="tulips" src="img/tulips.png" alt="" data-anim="rise" style="--d:700ms" width="450" height="430" loading="lazy" decoding="async">
-    <img class="frame" src="img/frame.png" alt="" data-anim="spin" style="--d:450ms" width="610" height="770" loading="lazy" decoding="async">
+    <div class="panel" data-anim="right" style="--d:250ms"><div class="topo"></div></div>
     <img class="photo" src="img/bren-outdoor.jpg" alt="Bren Spector standing in a grassy field, smiling" data-anim="right" style="--d:350ms" width="404" height="500" loading="lazy" decoding="async">
     <h2><span class="t1" data-anim="drop" style="--d:200ms">Thank</span><span class="t2" data-anim="drop" style="--d:350ms">you!</span></h2>
     <p class="signoff" data-anim="rise" style="--d:500ms">I hope to hear<br>from you<br>soon!</p>
