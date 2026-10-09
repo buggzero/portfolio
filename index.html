@@ -157,7 +157,13 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 #thanks .frame{display:none}
 #thanks .panel{left:60rem;top:0;width:36rem;height:54rem;background:var(--ink);overflow:hidden}
 #thanks .panel .topo{position:absolute}
-#thanks .photo{left:66rem;top:10rem;width:24rem;height:30rem;object-fit:cover;outline:.14rem solid var(--rust);outline-offset:.9rem}
+#thanks .sheet{left:66rem;top:10rem;width:24rem;height:30rem;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:.5rem;outline:.14rem solid var(--rust);outline-offset:.9rem}
+#thanks .sheet a{display:block;overflow:hidden;background:var(--ink)}
+#thanks .sheet img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .5s ease;filter:saturate(.92)}
+#thanks .sheet a:hover img,#thanks .sheet a:focus-visible img{transform:scale(1.06);filter:none}
+#thanks .sheet a:focus-visible{outline:.14rem solid var(--paper);outline-offset:-.14rem}
+#thanks .backlink{left:66rem;top:43.4rem;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--rust);text-decoration:none}
+#thanks .backlink:hover{color:var(--paper)}
 #thanks h2{font-size:14rem;line-height:1;font-weight:500}
 #thanks h2 span{position:absolute;display:block;white-space:nowrap;transform-origin:left center}
 #thanks .t1{left:9rem;top:6.6rem;--rot:0deg}
@@ -237,7 +243,9 @@ body.lb-open{overflow:hidden}
   #thanks{background:var(--sand)}
   #thanks .stage{background:var(--sand);padding-top:88px}
   #thanks .tulips,#thanks .frame{display:none}
-  #thanks .photo{width:min(100%,320px)!important;aspect-ratio:404/500;object-fit:cover;outline:2px solid var(--rust);outline-offset:8px;margin:8px}
+  #thanks .sheet{order:10;width:calc(100% - 16px)!important;aspect-ratio:3/2;height:auto!important;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);outline:2px solid var(--rust);outline-offset:8px;margin:20px 8px 8px;gap:5px}
+  #thanks .backlink{order:11;color:var(--rust);font-size:.75rem;margin-top:6px}
+  #thanks .credit{order:12}
   #thanks h2{font-size:3.4rem;display:grid}
   #thanks h2 span{position:static!important;transform:none!important}
   #thanks .t2{padding-left:.6em}
@@ -374,7 +382,15 @@ body.lb-open{overflow:hidden}
 <section class="scene" id="thanks" aria-label="Thank you">
   <div class="stage">
     <div class="panel" data-anim="right" style="--d:250ms"><div class="topo"></div></div>
-    <img class="photo" src="img/bren-outdoor.jpg" alt="Bren Spector standing in a grassy field, smiling" data-anim="right" style="--d:350ms" width="404" height="500" loading="lazy" decoding="async">
+    <div class="sheet" data-anim="right" style="--d:350ms" role="list" aria-label="A few pieces from the portfolio">
+      <a role="listitem" href="#work"><img src="img/work/impact-cover.jpg" alt="2025 Impact Report cover" style="object-position:52% 50%" width="1500" height="1000" loading="lazy" decoding="async"></a>
+      <a role="listitem" href="#work"><img src="img/work/naturegap.jpg" alt="The Nature Gap brochure" style="object-position:47% 50%" width="1500" height="1000" loading="lazy" decoding="async"></a>
+      <a role="listitem" href="#work"><img src="img/work/merch.jpg" alt="Collective Power tote" style="object-position:22% 50%" width="1500" height="1000" loading="lazy" decoding="async"></a>
+      <a role="listitem" href="#work"><img src="img/work/parkdays.jpg" alt="People Powered Park Days banner" style="object-position:30% 50%" width="1500" height="1000" loading="lazy" decoding="async"></a>
+      <a role="listitem" href="#work"><img src="img/work/epicentral.jpg" alt="Epicentral rack card" style="object-position:18% 50%" width="1500" height="1000" loading="lazy" decoding="async"></a>
+      <a role="listitem" href="#work"><img src="img/work/rebrand.jpg" alt="Justice Outside logo suite" style="object-position:20% 50%" width="1500" height="1000" loading="lazy" decoding="async"></a>
+    </div>
+    <a class="backlink" href="#work" data-anim="rise" style="--d:700ms">Back to the work &uarr;</a>
     <h2><span class="t1" data-anim="drop" style="--d:200ms">Thank</span><span class="t2" data-anim="drop" style="--d:350ms">you!</span></h2>
     <p class="signoff" data-anim="rise" style="--d:500ms">I hope to hear<br>from you<br>soon!</p>
     <hr class="dotline" data-anim="wipe" style="--d:650ms">
