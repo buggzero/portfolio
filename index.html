@@ -172,6 +172,8 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 .links a.ghost{background:transparent;border:.08rem solid rgba(246,243,236,.55)}
 .links a:hover,.links a:focus-visible{background:var(--paper);color:var(--ink);outline:none}
 .links a::after{content:'\2197'}
+.wcard.wide{grid-column:1/-1}
+.wcard.wide p{max-width:62rem}
 .w-note{max-width:60rem;margin:3rem auto 0;padding:0 2rem;text-align:center;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.7}
 
 /* ---------- 9 · thank you ---------- */
@@ -302,6 +304,7 @@ body.lb-open{overflow:hidden}
   .zoom:hover{transform:none}
   #writing{padding:0 0 48px}
   .wgrid{grid-template-columns:1fr;gap:20px;padding:0 20px}
+  .wcard.wide{grid-column:auto}
   .wcard{padding:22px 20px 24px;gap:12px}
   .wcard .num{font-size:2.6rem}
   .wcard h3{font-size:1.45rem}
@@ -426,48 +429,56 @@ body.lb-open{overflow:hidden}
     <h2 data-anim="drop" style="--d:150ms">The <em>writing</em></h2>
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Press releases</span><span>Executive voice</span><span>Ghostwriting</span><span>Technical writing</span><span>Reporter briefs</span><span>Earned media</span><span>English &amp; Spanish</span><span>Press releases</span><span>Executive voice</span><span>Ghostwriting</span><span>Technical writing</span><span>Reporter briefs</span><span>Earned media</span><span>English &amp; Spanish</span></div></div>
   </div>
-  <p class="work-intro" data-anim="rise" style="--d:300ms">Four kinds of writing, one habit: figure out who's reading, then make the important thing impossible to miss. Everything below is published and public.</p>
+  <p class="work-intro" data-anim="rise" style="--d:300ms">Selected work in news writing, executive communications, technical storytelling, and media relations. These samples show how I explain complex subjects, write for different audiences, and prepare stories for publication.</p>
   <div class="wgrid">
 
     <article class="wcard" data-anim="rise">
       <span class="num">01</span>
-      <span class="t-meta">Press release &middot; Justice Outside &middot; Feb 2026</span>
-      <h3>A national dataset, turned into a three-number news story</h3>
-      <p>The launch release for <em>The Nature Gap</em>, a census-tract analysis co-authored with the Center for American Progress and Conservation Science Partners. I wrote it around three numbers a reporter could repeat, and I was the media contact on it.</p>
-      <p class="proof"><b>Result</b>12 placements, including Inside Climate News, Sierra, National Parks Traveler, and nine public radio stations.</p>
-      <div class="links"><a href="https://justiceoutside.org/the-nature-gap-communities-of-color-and-those-with-low-incomes-are-bearing-the-brunt-of-americas-nature-loss/" target="_blank" rel="noopener">Read the release</a></div>
+      <span class="t-meta">Press release &amp; earned media &middot; Justice Outside &middot; 2026</span>
+      <h3>Making national research newsworthy</h3>
+      <p>Wrote the Nature Gap launch release around three findings journalists could quickly understand and use. Served as media contact and coordinated outreach for the national report.</p>
+      <p class="proof"><b>Result</b>The broader campaign generated 12 earned media placements across four stories, including coverage by Inside Climate News, Sierra, National Parks Traveler, and nine Mountain West public radio stations.</p>
+      <div class="links"><a href="https://justiceoutside.org/the-nature-gap-communities-of-color-and-those-with-low-incomes-are-bearing-the-brunt-of-americas-nature-loss/" target="_blank" rel="noopener">Nature Gap launch release</a></div>
     </article>
 
     <article class="wcard" data-anim="rise" style="--d:100ms">
       <span class="num">02</span>
-      <span class="t-meta">Executive voice &middot; Justice Outside</span>
-      <h3>Writing in a CEO's voice, and the organization's</h3>
-      <p>I'm the ghostwriter and communications counsel for our CEO. That includes <em>Kim's Reflections</em>, her bylined LinkedIn essay series on what philanthropy owes the communities it funds, plus op-eds and mainstage remarks like her acceptance of ABFE's 2026 Institutional Award for Philanthropic Leadership. I also wrote our public commitment on immigration and environmental justice.</p>
-      <p class="proof"><b>Range</b>Three CEOs ghostwritten across my career, in nonprofit, health care, and SaaS.</p>
-      <div class="links"><a href="https://www.linkedin.com/pulse/we-do-advocate-communities-them-justice-outside-vqtac/" target="_blank" rel="noopener">We advocate with them</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-lead-single-issue-lives-philanthropy-still-acting-iklnc/" target="_blank" rel="noopener">Single-issue lives</a><a class="ghost" href="https://justiceoutside.org/2026-commitment-to-immigration-and-environmental-justice/" target="_blank" rel="noopener">The commitment</a></div>
+      <span class="t-meta">Corporate press releases &middot; Resilia (B2B SaaS) &middot; 2023</span>
+      <h3>Announcing growth for a venture-backed technology company</h3>
+      <p>Wrote corporate announcements for Resilia, a SaaS platform for nonprofits and their funders, in the year after its $35M Series B. They announced a partnership with U.S. Bancorp Impact Finance, two board appointments, and new executives in finance, people operations, and customer success.</p>
+      <div class="links"><a href="https://www.resilia.com/press-releases/tech-for-good-innovator-resilia-partners-with-us-bank-to-help-strengthen-bipoc-led-community-development-nonprofits" target="_blank" rel="noopener">U.S. Bank partnership</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-hires-new-finance-people-operations-and-customer-success-executives-to-accelerate-growth" target="_blank" rel="noopener">Executive hires</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-welcomes-two-new-board-of-directors-members-as-company-expands" target="_blank" rel="noopener">Board appointments</a></div>
     </article>
 
     <article class="wcard" data-anim="rise">
       <span class="num">03</span>
-      <span class="t-meta">Technical writing &middot; State of Colorado, OIT</span>
-      <h3>Explaining a digital driver license to police, policy people, and award judges</h3>
-      <p>At the Governor's Office of Information Technology I wrote plain-language content for state technology launches and service incidents, and led the writing on award nominations that won nine state and national technology awards. These national nominations explain how Colorado's digital ID and vaccine record work, who adopted them, and what changed.</p>
-      <p class="proof"><b>Result</b>Nine state and national technology awards.</p>
+      <span class="t-meta">Technical communications &middot; Colorado OIT</span>
+      <h3>Translating complex technology for public audiences</h3>
+      <p>Led the writing on national award nominations for two features in the state's myColorado app, Colorado Digital ID and myVaccine Record. Each one explained how the technology worked, who adopted it, and why it mattered to residents and public-sector stakeholders.</p>
+      <p class="proof"><b>Result</b>Nominations I led earned nine state and national technology awards.</p>
       <div class="links"><a href="https://www.nascio.org/awards-library/awards/bolstering-law-enforcement-safety-with-colorado-digital-id" target="_blank" rel="noopener">Colorado Digital ID</a><a class="ghost" href="https://www.nascio.org/awards-library/awards/myvaccine-record" target="_blank" rel="noopener">myVaccine Record</a></div>
     </article>
 
     <article class="wcard" data-anim="rise" style="--d:100ms">
       <span class="num">04</span>
-      <span class="t-meta">Media relations &middot; Justice Outside</span>
-      <h3>From reporter brief to published story</h3>
+      <span class="t-meta">Executive thought leadership &middot; Justice Outside</span>
+      <h3>Writing in an executive's voice</h3>
+      <p>Ghostwrote articles, op-eds, speeches, and remarks for the CEO, including her LinkedIn essay series, <em>Kim's Reflections</em>. Each piece had to sound like her and hold the organization's position.</p>
+      <p class="proof"><b>Experience</b>Ghostwriting for three CEOs across nonprofit, healthcare, and technology organizations.</p>
+      <div class="links"><a href="https://www.linkedin.com/pulse/we-do-advocate-communities-them-justice-outside-vqtac/" target="_blank" rel="noopener">We advocate with them</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-lead-single-issue-lives-philanthropy-still-acting-iklnc/" target="_blank" rel="noopener">Single-issue lives</a></div>
+    </article>
+
+    <article class="wcard wide" data-anim="rise">
+      <span class="num">05</span>
+      <span class="t-meta">Media relations &middot; Reporter briefing &amp; interview preparation</span>
+      <h3>Preparing spokespeople for national and regional media</h3>
       <div class="flow-steps" aria-label="Process"><span>Pitch</span><i>&rarr;</i><span>Reporter brief</span><i>&rarr;</i><span>Interview</span><i>&rarr;</i><span>Story</span></div>
-      <p>Before every interview I write the spokesperson's brief: the reporter's beat and recent stories, local data for their audience, a community example, and sound bites cut for radio. For Mountain West News Bureau, the brief led with Albuquerque and a grantee protecting centuries-old acequia water systems. The story ran across the region. A brief for the Associated Press put our Chief Program Officer in a national wire story.</p>
-      <p class="proof"><b>Result</b>An AP story picked up by The Boston Globe and U.S. News, and a regional public radio story on nine stations.</p>
-      <div class="links"><a href="https://www.kunr.org/local-stories/2026-03-12/report-nature-loss-pollution-development-western-communities" target="_blank" rel="noopener">Mountain West story</a><a class="ghost" href="https://www.wwno.org/coastal-desk/2025-01-28/in-policy-reversal-trump-eliminates-help-for-black-and-latino-communities-hit-harder-by-pollution" target="_blank" rel="noopener">AP story</a><a class="ghost" href="https://www.sierraclub.org/sierra/affordability-and-race-play-major-role-whether-people-live-nature-deprived-areas" target="_blank" rel="noopener">Sierra</a></div>
+      <p>Wrote interview briefs tailored to each reporter's beat, audience, and deadline. Each brief covered the data to cite, regional examples, likely questions, and short talking points.</p>
+      <p class="proof"><b>Result</b>Prepared senior leaders for a January 2025 Associated Press story and a 2026 Mountain West News Bureau report that ran on nine public radio stations.</p>
+      <div class="links"><a href="https://www.wwno.org/coastal-desk/2025-01-28/in-policy-reversal-trump-eliminates-help-for-black-and-latino-communities-hit-harder-by-pollution" target="_blank" rel="noopener">Associated Press coverage</a><a class="ghost" href="https://www.kunr.org/local-stories/2026-03-12/report-nature-loss-pollution-development-western-communities" target="_blank" rel="noopener">Mountain West News Bureau coverage</a></div>
     </article>
 
   </div>
-  <p class="w-note">Reporter briefs and more bylined samples available on request</p>
+  <p class="w-note">Redacted reporter briefing samples available on request</p>
 </section>
 
 <!-- 9 · thank you -->
