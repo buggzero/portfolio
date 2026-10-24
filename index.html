@@ -150,6 +150,30 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 .tile strong{font-family:var(--display);font-stretch:62.5%;font-weight:600;font-size:1.9rem;line-height:1.05;letter-spacing:-.005em}
 .t-desc{font-size:1.02rem;line-height:1.45;color:#3b3a37}
 
+/* ---------- 5 · writing (flows like work) ---------- */
+#writing{height:auto;min-height:100vh;display:block;padding:0 0 6rem;background:var(--ink);color:var(--paper)}
+#writing .work-head{background:var(--ink)}
+#writing .work-head h2{color:var(--paper)}
+#writing .work-head h2 em{font-style:italic;color:var(--rust)}
+#writing .work-intro{color:var(--paper);opacity:.92}
+.wgrid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:88rem;margin:0 auto;padding:0 2rem}
+.wcard{position:relative;margin:0;display:grid;align-content:start;gap:1rem;padding:2.2rem 2.4rem 2.4rem;background:#2f2e2a;border-radius:.3rem;border-top:.25rem solid var(--rust)}
+.wcard .num{font-family:var(--display);font-stretch:62.5%;font-weight:500;font-size:4.2rem;line-height:.8;color:var(--rust)}
+.wcard .t-meta{color:#e39a63}
+.wcard h3{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;font-size:2.2rem;line-height:1.02;letter-spacing:-.005em;color:var(--paper)}
+.wcard p{font-size:1.02rem;line-height:1.5;color:#dcd7cb}
+.wcard .proof{padding-top:.9rem;border-top:.08rem solid rgba(246,243,236,.18);font-size:.98rem;color:var(--paper)}
+.wcard .proof b{font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#e39a63;margin-right:.5em}
+.flow-steps{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+.flow-steps span{padding:.45em .8em;border:.08rem solid rgba(246,243,236,.4);border-radius:999px;color:var(--paper)}
+.flow-steps i{font-style:normal;color:var(--rust)}
+.links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.2rem}
+.links a{display:inline-flex;align-items:center;gap:.45em;padding:.55em 1em;border-radius:.2rem;background:var(--rust);color:var(--paper);text-decoration:none;font-family:var(--mono);font-stretch:85%;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;transition:background .2s,color .2s}
+.links a.ghost{background:transparent;border:.08rem solid rgba(246,243,236,.55)}
+.links a:hover,.links a:focus-visible{background:var(--paper);color:var(--ink);outline:none}
+.links a::after{content:'\2197'}
+.w-note{max-width:60rem;margin:3rem auto 0;padding:0 2rem;text-align:center;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.7}
+
 /* ---------- 9 · thank you ---------- */
 #thanks{background:var(--sand);color:var(--ink)}
 #thanks .blob{transform-origin:30% 40%}
@@ -276,12 +300,19 @@ body.lb-open{overflow:hidden}
   #thanks .credit{text-align:left;color:var(--ink);font-size:.7rem;margin-top:8px;opacity:.6}
   .cue{position:absolute!important;left:50%!important;bottom:14px!important;top:auto!important;width:auto!important;transform:translateX(-50%)!important;color:var(--paper)}
   .zoom:hover{transform:none}
+  #writing{padding:0 0 48px}
+  .wgrid{grid-template-columns:1fr;gap:20px;padding:0 20px}
+  .wcard{padding:22px 20px 24px;gap:12px}
+  .wcard .num{font-size:2.6rem}
+  .wcard h3{font-size:1.45rem}
+  .wcard p,.wcard .proof{font-size:.98rem}
+  .w-note{text-align:left;padding:0 20px;font-size:.7rem;margin-top:24px}
 }
 </style>
 
 <header class="bar">
   <a class="brand" href="#hero">Bren Spector</a>
-  <nav class="menu" aria-label="Sections"><a href="#about">About</a><a href="#work">Work</a><a href="#thanks">Contact</a></nav>
+  <nav class="menu" aria-label="Sections"><a href="#about">About</a><a href="#work">Work</a><a href="#writing">Writing</a><a href="#thanks">Contact</a></nav>
   <button class="play" id="playBtn" type="button" aria-pressed="false"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l9 5-9 5z"/></svg><span>Play</span></button>
 </header>
 
@@ -290,6 +321,7 @@ body.lb-open{overflow:hidden}
   <li><a href="#about" aria-label="About me" title="About me"></a></li>
   <li><a href="#how" aria-label="How I see it" title="How I see it"></a></li>
   <li><a href="#work" aria-label="Recent work" title="Recent work"></a></li>
+  <li><a href="#writing" aria-label="Writing" title="Writing"></a></li>
   <li><a href="#thanks" aria-label="Thank you" title="Thank you"></a></li>
 </ul>
 
@@ -362,7 +394,7 @@ body.lb-open{overflow:hidden}
     </figure>
     <figure class="tile" data-anim="rise" style="--d:100ms">
       <img class="zoom" src="img/work/naturegap.jpg" data-full="img/full/naturegap-cover.jpg" alt="The Nature Gap bifold brochure, cover" width="1500" height="1000" loading="lazy" decoding="async">
-      <figcaption><span class="t-meta">Campaign &middot; The Nature Gap</span><strong>A research report, folded for legislators</strong><span class="t-desc">Bifold built on the 3&times; nature-deprivation stat. The launch pitched 14+ national outlets and landed Inside Climate News, National Parks Traveler, and a syndicated AP story.</span></figcaption>
+      <figcaption><span class="t-meta">Campaign &middot; The Nature Gap</span><strong>A research report, folded for legislators</strong><span class="t-desc">Bifold built on the 3&times; nature-deprivation stat. The launch pitched 14+ national outlets and earned 12 placements, including Inside Climate News, Sierra, and a Mountain West News Bureau story that ran on nine public radio stations.</span></figcaption>
     </figure>
     <figure class="tile" data-anim="rise">
       <img class="zoom" src="img/work/myvaccine.jpg" data-full="img/full/myvaccine-board.jpg" alt="A hand holds up a phone showing the myVaccine record screen in the State of Colorado's myColorado app" width="1500" height="1000" loading="lazy" decoding="async">
@@ -385,6 +417,57 @@ body.lb-open{overflow:hidden}
       <figcaption><span class="t-meta">Digital &middot; Justice Outside website, 2025</span><strong>Led the redesign, still run the edits</strong><span class="t-desc">Content, photo direction, and page reviews. I managed the web designer who built it and trained our staff to use it. At Resilia, my social series and landing pages helped grow Facebook engagement 43.7% against a 10% goal.</span></figcaption>
     </figure>
   </div>
+</section>
+
+<!-- 5 · writing -->
+<section class="scene flow" id="writing" aria-label="Writing">
+  <div class="work-head">
+    <div class="topo"></div>
+    <h2 data-anim="drop" style="--d:150ms">The <em>writing</em></h2>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Press releases</span><span>Executive voice</span><span>Ghostwriting</span><span>Technical writing</span><span>Reporter briefs</span><span>Earned media</span><span>English &amp; Spanish</span><span>Press releases</span><span>Executive voice</span><span>Ghostwriting</span><span>Technical writing</span><span>Reporter briefs</span><span>Earned media</span><span>English &amp; Spanish</span></div></div>
+  </div>
+  <p class="work-intro" data-anim="rise" style="--d:300ms">Four kinds of writing, one habit: figure out who's reading, then make the important thing impossible to miss. Everything below is published and public.</p>
+  <div class="wgrid">
+
+    <article class="wcard" data-anim="rise">
+      <span class="num">01</span>
+      <span class="t-meta">Press release &middot; Justice Outside &middot; Feb 2026</span>
+      <h3>A national dataset, turned into a three-number news story</h3>
+      <p>The launch release for <em>The Nature Gap</em>, a census-tract analysis co-authored with the Center for American Progress and Conservation Science Partners. I wrote it around three numbers a reporter could repeat, and I was the media contact on it.</p>
+      <p class="proof"><b>Result</b>12 placements, including Inside Climate News, Sierra, National Parks Traveler, and nine public radio stations.</p>
+      <div class="links"><a href="https://justiceoutside.org/the-nature-gap-communities-of-color-and-those-with-low-incomes-are-bearing-the-brunt-of-americas-nature-loss/" target="_blank" rel="noopener">Read the release</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise" style="--d:100ms">
+      <span class="num">02</span>
+      <span class="t-meta">Executive voice &middot; Justice Outside</span>
+      <h3>Writing in a CEO's voice, and the organization's</h3>
+      <p>I'm the ghostwriter and communications counsel for our CEO. That includes <em>Kim's Reflections</em>, her bylined LinkedIn essay series on what philanthropy owes the communities it funds, plus op-eds and mainstage remarks like her acceptance of ABFE's 2026 Institutional Award for Philanthropic Leadership. I also wrote our public commitment on immigration and environmental justice.</p>
+      <p class="proof"><b>Range</b>Three CEOs ghostwritten across my career, in nonprofit, health care, and SaaS.</p>
+      <div class="links"><a href="https://www.linkedin.com/pulse/we-do-advocate-communities-them-justice-outside-vqtac/" target="_blank" rel="noopener">We advocate with them</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-lead-single-issue-lives-philanthropy-still-acting-iklnc/" target="_blank" rel="noopener">Single-issue lives</a><a class="ghost" href="https://justiceoutside.org/2026-commitment-to-immigration-and-environmental-justice/" target="_blank" rel="noopener">The commitment</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise">
+      <span class="num">03</span>
+      <span class="t-meta">Technical writing &middot; State of Colorado, OIT</span>
+      <h3>Explaining a digital driver license to police, policy people, and award judges</h3>
+      <p>At the Governor's Office of Information Technology I wrote plain-language content for state technology launches and service incidents, and led the writing on award nominations that won nine state and national technology awards. These national nominations explain how Colorado's digital ID and vaccine record work, who adopted them, and what changed.</p>
+      <p class="proof"><b>Result</b>Nine state and national technology awards.</p>
+      <div class="links"><a href="https://www.nascio.org/awards-library/awards/bolstering-law-enforcement-safety-with-colorado-digital-id" target="_blank" rel="noopener">Colorado Digital ID</a><a class="ghost" href="https://www.nascio.org/awards-library/awards/myvaccine-record" target="_blank" rel="noopener">myVaccine Record</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise" style="--d:100ms">
+      <span class="num">04</span>
+      <span class="t-meta">Media relations &middot; Justice Outside</span>
+      <h3>From reporter brief to published story</h3>
+      <div class="flow-steps" aria-label="Process"><span>Pitch</span><i>&rarr;</i><span>Reporter brief</span><i>&rarr;</i><span>Interview</span><i>&rarr;</i><span>Story</span></div>
+      <p>Before every interview I write the spokesperson's brief: the reporter's beat and recent stories, local data for their audience, a community example, and sound bites cut for radio. For Mountain West News Bureau, the brief led with Albuquerque and a grantee protecting centuries-old acequia water systems. The story ran across the region. A brief for the Associated Press put our Chief Program Officer in a national wire story.</p>
+      <p class="proof"><b>Result</b>An AP story picked up by The Boston Globe and U.S. News, and a regional public radio story on nine stations.</p>
+      <div class="links"><a href="https://www.kunr.org/local-stories/2026-03-12/report-nature-loss-pollution-development-western-communities" target="_blank" rel="noopener">Mountain West story</a><a class="ghost" href="https://www.wwno.org/coastal-desk/2025-01-28/in-policy-reversal-trump-eliminates-help-for-black-and-latino-communities-hit-harder-by-pollution" target="_blank" rel="noopener">AP story</a><a class="ghost" href="https://www.sierraclub.org/sierra/affordability-and-race-play-major-role-whether-people-live-nature-deprived-areas" target="_blank" rel="noopener">Sierra</a></div>
+    </article>
+
+  </div>
+  <p class="w-note">Reporter briefs and more bylined samples available on request</p>
 </section>
 
 <!-- 9 · thank you -->
@@ -483,8 +566,8 @@ body.lb-open{overflow:hidden}
   // Work tiles animate in one by one as they reach the viewport.
   if('IntersectionObserver' in window){
     var tio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); tio.unobserve(e.target); } }); },{rootMargin:'0px 0px -12% 0px'});
-    document.querySelectorAll('#work .tile, #work .work-intro').forEach(function(t){ tio.observe(t); });
-  } else { document.querySelectorAll('#work [data-anim]').forEach(function(t){ t.classList.add('in'); }); }
+    document.querySelectorAll('#work .tile, #work .work-intro, #writing .wcard, #writing .work-intro').forEach(function(t){ tio.observe(t); });
+  } else { document.querySelectorAll('#work [data-anim], #writing [data-anim]').forEach(function(t){ t.classList.add('in'); }); }
   document.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click',function(ev){ ev.preventDefault(); stop(); var t=document.querySelector(a.getAttribute('href')); if(t) window.scrollTo({top:t.offsetTop,behavior:reduce?'auto':'smooth'}); }); });
 
   // Scroll cue hides after the first scroll.
