@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Bren Spector Portfolio">
-<meta property="og:description" content="Bren Spector, communications, brand, and design leader. Strategy, campaigns, presentations, content, brand, print, art direction, events, and digital work.">
+<meta property="og:description" content="Bren Spector, communications, editorial, and brand leader. Executive writing, editorial planning, flagship reports, media relations, campaigns, brand, and design.">
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="img/favicon.png" type="image/png">
 <script data-goatcounter="https://brenspector.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Bren Spector Portfolio</title>
-<meta name="description" content="Bren Spector, communications, brand, and design leader. Strategy, campaigns, presentations, content, brand, print, art direction, events, and digital work.">
+<meta name="description" content="Bren Spector, communications, editorial, and brand leader. Executive writing, editorial planning, flagship reports, media relations, campaigns, brand, and design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wdth,wght@0,62.5..100,400..700;1,62.5..100,400..700&family=Nunito+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap">
@@ -150,7 +150,7 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 .tile strong{font-family:var(--display);font-stretch:62.5%;font-weight:600;font-size:1.9rem;line-height:1.05;letter-spacing:-.005em}
 .t-desc{font-size:1.02rem;line-height:1.45;color:#3b3a37}
 
-/* ---------- 5 · writing (flows like work) ---------- */
+/* ---------- 3 · writing (flows like work) ---------- */
 #writing{height:auto;min-height:100vh;display:block;padding:0 0 6rem;background:var(--ink);color:var(--paper)}
 #writing .work-head{background:var(--ink)}
 #writing .work-head h2{color:var(--paper)}
@@ -174,6 +174,16 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 .links a::after{content:'\2197'}
 .wcard.wide{grid-column:1/-1}
 .wcard.wide p{max-width:62rem}
+.pull{max-width:66rem;margin:0 auto 3.6rem;padding:0 2rem;text-align:center}
+.pull blockquote{margin:0;font-family:var(--display);font-stretch:62.5%;font-style:italic;font-weight:500;font-size:2.45rem;line-height:1.18;color:var(--paper)}
+.pull figcaption{margin-top:1.4rem;font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#e39a63}
+.ba-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;align-items:start}
+.ba-col{padding:1.3rem 1.5rem;border:.08rem solid rgba(246,243,236,.22);border-radius:.3rem}
+.ba-col.after{background:var(--paper);border-color:var(--paper)}
+.ba-col p{max-width:none!important;font-size:1rem;line-height:1.5}
+.ba-col.after p{color:var(--ink)}
+.ba-lbl{display:block;margin-bottom:.7rem;font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#e39a63}
+.ba-col.after .ba-lbl{color:var(--rust)}
 .w-note{max-width:60rem;margin:3rem auto 0;padding:0 2rem;text-align:center;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.7}
 
 /* ---------- 9 · thank you ---------- */
@@ -310,21 +320,26 @@ body.lb-open{overflow:hidden}
   .wcard h3{font-size:1.45rem}
   .wcard p,.wcard .proof{font-size:.98rem}
   .w-note{text-align:left;padding:0 20px;font-size:.7rem;margin-top:24px}
+  .pull{text-align:left;padding:0 20px;margin-bottom:28px}
+  .pull blockquote{font-size:1.45rem}
+  .pull figcaption{font-size:.68rem}
+  .ba-cols{grid-template-columns:1fr;gap:14px}
+  .ba-col{padding:16px}
 }
 </style>
 
 <header class="bar">
   <a class="brand" href="#hero">Bren Spector</a>
-  <nav class="menu" aria-label="Sections"><a href="#about">About</a><a href="#work">Work</a><a href="#writing">Writing</a><a href="#thanks">Contact</a></nav>
+  <nav class="menu" aria-label="Sections"><a href="#about">About</a><a href="#writing">Writing</a><a href="#work">Design</a><a href="#thanks">Contact</a></nav>
   <button class="play" id="playBtn" type="button" aria-pressed="false"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l9 5-9 5z"/></svg><span>Play</span></button>
 </header>
 
 <ul class="dots" aria-label="Pages">
   <li><a href="#hero" aria-label="Cover" title="Cover" aria-current="true"></a></li>
   <li><a href="#about" aria-label="About me" title="About me"></a></li>
-  <li><a href="#how" aria-label="How I see it" title="How I see it"></a></li>
-  <li><a href="#work" aria-label="Recent work" title="Recent work"></a></li>
   <li><a href="#writing" aria-label="Writing" title="Writing"></a></li>
+  <li><a href="#how" aria-label="How I see it" title="How I see it"></a></li>
+  <li><a href="#work" aria-label="Design and brand work" title="Design and brand work"></a></li>
   <li><a href="#thanks" aria-label="Thank you" title="Thank you"></a></li>
 </ul>
 
@@ -333,9 +348,9 @@ body.lb-open{overflow:hidden}
 <!-- 1 · cover -->
 <section class="scene" id="hero" aria-label="Cover">
   <div class="stage">
-    <div class="panel" data-anim="right" style="--d:300ms"><div class="topo"></div><p class="tag"><b>Strategy, brand &amp; design</b>Thirteen pieces &middot; 2013 to 2026</p></div>
+    <div class="panel" data-anim="right" style="--d:300ms"><div class="topo"></div><p class="tag"><b>Writing, brand &amp; design</b>Selected work &middot; 2013 to 2026</p></div>
     <h1 class="name"><span class="l1" data-anim="drop" style="--d:250ms">Bren</span><span class="l2" data-anim="drop" style="--d:400ms">Spector</span></h1>
-    <p class="role" data-anim="rise" style="--d:650ms">Communications, brand &amp; design leader<br>Strategy, campaigns, presentations &amp; art direction</p>
+    <p class="role" data-anim="rise" style="--d:650ms">Communications, editorial &amp; brand leader<br>Writing, executive voice, campaigns &amp; design</p>
     <hr class="dotline" data-anim="wipe" style="--d:850ms">
     <p class="word" data-anim="rise" style="--d:950ms">Portfolio</p>
     <p class="meta" data-anim="rise" style="--d:1100ms">Colorado Springs &middot; EN / ES &middot; 2026</p>
@@ -350,31 +365,138 @@ body.lb-open{overflow:hidden}
     <h2 data-anim="drop" style="--d:200ms">About me</h2>
     <div class="text">
       <p data-anim="rise" style="--d:350ms">Hi, I'm Bren. Let's make something people stop for.</p>
-      <p data-anim="rise" style="--d:450ms">I grew up in Mexico City and have designed in English and Spanish from the start. Colorado Springs is home now. I'm a full-on extrovert and a proud yapper, so I'll probably ask about your weekend before we ever talk fonts.</p>
-      <p data-anim="rise" style="--d:550ms">That's on purpose. The best work I've made started with a real conversation, not a brief. Before I open Illustrator or InDesign, I want to know who you are, who you're trying to reach, and what you want them to feel when they see it. Then the finished piece looks and sounds like you.</p>
-      <p data-anim="rise" style="--d:650ms">In 13+ years I've worked that way on everything from bilingual flyers at a community health center to SaaS conference booths, styled shoots, and a full rebrand for a national environmental justice nonprofit. Come say hi. I promise to listen as much as I talk.</p>
+      <p data-anim="rise" style="--d:450ms">I grew up in Mexico City and have written and designed in English and Spanish from the start. Colorado Springs is home now. I'm a full-on extrovert and a proud yapper, so I'll probably ask about your weekend before we ever talk headlines or fonts.</p>
+      <p data-anim="rise" style="--d:550ms">That's on purpose. The best work I've made started with a real conversation. Before I write a word or open InDesign, I want to know who you are, who you're trying to reach, and what you want them to do next. Then the speech, the report, or the event sounds like you.</p>
+      <p data-anim="rise" style="--d:650ms">For 13+ years I've led communications that way: editorial strategy and content calendars, executive speeches and op-eds, media relations, flagship reports, and events. I turn research and policy into stories that funders, journalists, and policymakers can use, and I coach my team to do the same. Come say hi. I promise to listen as much as I talk.</p>
     </div>
   </div>
 </section>
 
-<!-- 3 · how i see it -->
+<!-- 3 · writing -->
+<section class="scene flow" id="writing" aria-label="Writing">
+  <div class="work-head">
+    <div class="topo"></div>
+    <h2 data-anim="drop" style="--d:150ms">The <em>writing</em></h2>
+    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Executive voice</span><span>Editorial planning</span><span>Blog series</span><span>Flagship reports</span><span>Voice &amp; messaging</span><span>Events as editorial</span><span>Press releases</span><span>Earned media</span><span>Technical writing</span><span>English &amp; Spanish</span><span>Executive voice</span><span>Editorial planning</span><span>Blog series</span><span>Flagship reports</span><span>Voice &amp; messaging</span><span>Events as editorial</span><span>Press releases</span><span>Earned media</span><span>Technical writing</span><span>English &amp; Spanish</span></div></div>
+  </div>
+  <p class="work-intro" data-anim="rise" style="--d:300ms">Writing is where most of my work starts. These samples show how I plan what an organization publishes and how I make complex subjects clear, whether the byline is mine or a CEO's.</p>
+  <figure class="pull" data-anim="rise">
+    <blockquote>&ldquo;So we got pins. Green hearts. And we started wearing them the following year. Small enough that you had to notice us to notice it. And people would lean in and ask, what is that? And we would say: it means that nature is a Black issue. It means the outdoors is not a white thing we are graciously trying to diversify. It is ours. It always was.&rdquo;</blockquote>
+    <figcaption>From acceptance remarks I wrote for Justice Outside's President &amp; CEO &middot; ABFE Institutional Award for Philanthropic Leadership, April 2026</figcaption>
+  </figure>
+  <div class="wgrid">
+
+    <article class="wcard" data-anim="rise">
+      <span class="num">01</span>
+      <span class="t-meta">Executive communications &middot; Justice Outside &amp; Peak Vista</span>
+      <h3>Writing in an executive's voice</h3>
+      <p>Ghostwrote speeches, remarks, essays, and op-eds for CEOs and senior leaders. For Justice Outside's President &amp; CEO, I wrote the acceptance remarks for ABFE's 2026 Institutional Award for Philanthropic Leadership and <em>Kim's Reflections</em>, a bylined LinkedIn essay series on trust and power. For Peak Vista's CEO, I wrote a guest column published in The Gazette, Colorado Springs' daily newspaper.</p>
+      <p class="proof"><b>Experience</b>Ghostwriter and communications counsel to three CEOs across nonprofit, healthcare, and technology organizations.</p>
+      <div class="links"><a href="https://www.linkedin.com/pulse/why-i-am-writing-justice-outside-k3yzc" target="_blank" rel="noopener">Why I am writing</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-advocate-communities-them-justice-outside-vqtac/" target="_blank" rel="noopener">We advocate with them</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-lead-single-issue-lives-philanthropy-still-acting-iklnc/" target="_blank" rel="noopener">Single-issue lives</a><a class="ghost" href="https://gazette.com/2018/08/12/guest-column-peak-vista-no-longer-a-well-kept-secret-fd1d0dce-9ca5-11e8-a2f2-ebd908485284/" target="_blank" rel="noopener">Gazette CEO op-ed</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise" style="--d:100ms">
+      <span class="num">02</span>
+      <span class="t-meta">Editorial planning &amp; blog series &middot; Justice Outside &amp; Resilia</span>
+      <h3>Planning what gets published, and when</h3>
+      <p>I plan content by the month, so each big piece feeds the next. The 2025 Impact Report became a funder mailing, a social content plan, and the CEO's LinkedIn essay series. This fall I edited <em>From People to Power</em>, a three-part blog series by our Chief Program Officer on Justice Outside's funds, and built the board and staff toolkit around it, with email and LinkedIn templates for each post. At Resilia I owned the editorial calendar across product lines and managed outside writers and a design agency.</p>
+      <p class="proof"><b>Result</b>The email program I launched at Justice Outside reached a 51% open rate this fall.</p>
+      <div class="links"><a href="samples/editorial-calendar-sample.pdf" target="_blank" rel="noopener">See a sample month</a><a class="ghost" href="https://justiceoutside.org/resources-create-possibility/" target="_blank" rel="noopener">Blog 1: Economic opportunity</a><a class="ghost" href="https://justiceoutside.org/when-people-can-heal-investing-in-health-and-wellness/" target="_blank" rel="noopener">Blog 2: Health and wellness</a><a class="ghost" href="https://justiceoutside.org/when-people-move-together-investing-in-grassroots-power/" target="_blank" rel="noopener">Blog 3: Grassroots power</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise">
+      <span class="num">03</span>
+      <span class="t-meta">Flagship content &middot; Justice Outside &middot; 2025 to 2026</span>
+      <h3>Turning an evaluation into a report funders finish</h3>
+      <p>Wrote and designed <em>From Trust to Transformation</em>, a 10-page report on the independent evaluation of Justice Outside's grantmaking, written as a short read for funders and partners. For the 2026 Nature Gap report, I helped scope the project and worked with the Center for American Progress and Conservation Science Partners to edit and reorder the final piece. I also designed the 2025 Impact Report and ran its rollout.</p>
+      <p class="proof"><b>Result</b>I wrote the CEO's thank-you note that went out with the Impact Report. 80% of the donors who received it gave more.</p>
+      <div class="links"><a href="https://justiceoutside.org/wp-content/uploads/2025/08/From-Trust-to-Transformation-How-Justice-Outside-is-Redefining-Grantmaking-for-Equity-and-Impact-FNL.pdf" target="_blank" rel="noopener">From Trust to Transformation</a><a class="ghost" href="https://www.americanprogress.org/article/the-nature-gap-communities-of-color-and-those-with-low-incomes-are-bearing-the-brunt-of-americas-nature-loss/" target="_blank" rel="noopener">The Nature Gap report</a><a class="ghost" href="https://justiceoutside.org/wp-content/uploads/2026/06/FNL-Impact-Report-2025-Print-Order.pdf" target="_blank" rel="noopener">2025 Impact Report</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise" style="--d:100ms">
+      <span class="num">04</span>
+      <span class="t-meta">Voice, messaging &amp; standards &middot; Justice Outside</span>
+      <h3>One message, taught to nine departments</h3>
+      <p>Built Justice Outside's impact narrative around its power-building model (Advocate, Fund, Build) and taught staff to use it. I adapted the model for each of nine departments, wrote their speaking points, trained every team, and held office hours. I also led the rebrand and built, with our Chief Program Officer, the Rapid Response Decision Rubric that leadership and the board's Program Committee adopted for deciding when the organization speaks on breaking news.</p>
+      <p class="proof"><b>Result</b>100% of staff reported confidence using the model, against a 90% goal.</p>
+    </article>
+
+    <article class="wcard wide ba" data-anim="rise">
+      <span class="t-meta">Before and after &middot; From Trust to Transformation</span>
+      <h3>The same paragraph, first draft and final</h3>
+      <div class="ba-cols">
+        <div class="ba-col"><span class="ba-lbl">Before &middot; my first draft &middot; 143 words</span><p>Justice Outside fills a unique role in the philanthropic sector as an intermediary led by People of Color. The combined experience of our staff, in conjunction with deep listening to our communities from the development of our Liberated Paths grantmaking in it's current form has been shaped by what we know to be true, a &quot;one size fits all&quot; approach is not effective for the outcomes we are seeking. Working to understand potential grantees' needs and working to bridge the knowledge gap through one-on-one conversations &mdash; especially those with small staff sizes&mdash;in building knowledge and awareness of available funding and other opportunities has been a key component since our initial research prior to launching Liberated Paths in 2019. With this history and understanding of our unique position we work to ensure that the Liberated Paths' commitment to accessibility is evident at every stage.</p></div>
+        <div class="ba-col after"><span class="ba-lbl">After &middot; my published version &middot; 83 words</span><p>Justice Outside fills a unique role in the philanthropic sector as an intermediary led by People of Color. Through deep listening to our communities and staff experience, we've learned that a &quot;one size fits all&quot; approach is not effective for the outcomes we are seeking. Understanding potential grantees' needs and bridging knowledge gaps through one-on-one conversations&mdash;especially with small organizations&mdash;has been a key component since launching our grantmaking in 2019. Our commitment to accessibility is evident at every stage of the process.</p></div>
+      </div>
+      <p class="proof"><b>Across the report</b>The methods section became four numbers a reader can take in at a glance, and 15 commitment bullets became five.</p>
+    </article>
+
+    <article class="wcard" data-anim="rise">
+      <span class="num">05</span>
+      <span class="t-meta">Events as editorial &middot; Nature Gap 2.0 webinar series &middot; 2026</span>
+      <h3>A report that became a three-part conversation</h3>
+      <p>Ran a webinar series that kept the Nature Gap findings in front of the people who can act on them, with sessions for funders, Latino community leaders, and policy advocates. I handled panelist outreach and prep and wrote the registration copy, emails, and social posts. I moderated Part 2 and hosted Part 3.</p>
+      <p class="proof"><b>Result</b>Part 1 drew 246 registrants and 120 live attendees.</p>
+    </article>
+
+    <article class="wcard" data-anim="rise" style="--d:100ms">
+      <span class="num">06</span>
+      <span class="t-meta">Press release &amp; earned media &middot; Justice Outside &middot; 2026</span>
+      <h3>Making national research newsworthy</h3>
+      <p>Wrote the Nature Gap launch release around three findings journalists could quickly understand and use. Served as media contact and coordinated outreach for the national report.</p>
+      <p class="proof"><b>Result</b>The campaign earned 15 placements across four stories, including Inside Climate News, Sierra, National Parks Traveler, and at least 12 Mountain West public radio stations.</p>
+      <div class="links"><a href="https://justiceoutside.org/the-nature-gap-communities-of-color-and-those-with-low-incomes-are-bearing-the-brunt-of-americas-nature-loss/" target="_blank" rel="noopener">Nature Gap launch release</a><a class="ghost" href="https://insideclimatenews.org/news/23022026/disadvantaged-communities-forest-wetlands-loss-health-impacts/" target="_blank" rel="noopener">Inside Climate News</a><a class="ghost" href="https://www.sierraclub.org/sierra/affordability-and-race-play-major-role-whether-people-live-nature-deprived-areas" target="_blank" rel="noopener">Sierra</a><a class="ghost" href="https://www.nationalparkstraveler.org/2026/02/analysis-finds-nature-loss-felt-unequally-across-race-and-income" target="_blank" rel="noopener">National Parks Traveler</a></div>
+    </article>
+
+    <article class="wcard wide" data-anim="rise">
+      <span class="num">07</span>
+      <span class="t-meta">Media relations &middot; Reporter briefing &amp; interview preparation</span>
+      <h3>Preparing spokespeople for national and regional media</h3>
+      <div class="flow-steps" aria-label="Process"><span>Pitch</span><i>&rarr;</i><span>Reporter brief</span><i>&rarr;</i><span>Interview</span><i>&rarr;</i><span>Story</span></div>
+      <p>Wrote interview briefs tailored to each reporter's beat, audience, and deadline. Each brief covered the data to cite, regional examples, likely questions, and short talking points. The sample below is the brief I wrote for our Chief Program Officer before her Mountain West News Bureau interview.</p>
+      <p class="proof"><b>Result</b>Prepared senior leaders for a January 2025 Associated Press story and a 2026 Mountain West News Bureau report that ran on at least 12 public radio stations.</p>
+      <div class="links"><a href="samples/reporter-brief-sample.pdf" target="_blank" rel="noopener">Read a reporter brief (redacted)</a><a class="ghost" href="https://www.wwno.org/coastal-desk/2025-01-28/in-policy-reversal-trump-eliminates-help-for-black-and-latino-communities-hit-harder-by-pollution" target="_blank" rel="noopener">Associated Press coverage</a><a class="ghost" href="https://www.kunr.org/local-stories/2026-03-12/report-nature-loss-pollution-development-western-communities" target="_blank" rel="noopener">Mountain West News Bureau coverage</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise">
+      <span class="num">08</span>
+      <span class="t-meta">Technical communications &middot; Colorado OIT</span>
+      <h3>Translating complex technology for public audiences</h3>
+      <p>Led the writing on national award nominations for two features in the state's myColorado app, Colorado Digital ID and myVaccine Record. Each one explained how the technology worked, who adopted it, and why it mattered to residents and public-sector stakeholders.</p>
+      <p class="proof"><b>Result</b>Nominations I led earned nine state and national technology awards.</p>
+      <div class="links"><a href="https://www.nascio.org/awards-library/awards/bolstering-law-enforcement-safety-with-colorado-digital-id" target="_blank" rel="noopener">Colorado Digital ID</a><a class="ghost" href="https://www.nascio.org/awards-library/awards/myvaccine-record" target="_blank" rel="noopener">myVaccine Record</a></div>
+    </article>
+
+    <article class="wcard" data-anim="rise" style="--d:100ms">
+      <span class="num">09</span>
+      <span class="t-meta">Corporate press releases &middot; Resilia (B2B SaaS) &middot; 2023</span>
+      <h3>Announcing growth for a venture-backed technology company</h3>
+      <p>Wrote corporate announcements for Resilia, a SaaS platform for nonprofits and their funders, in the year after its $35M Series B. They announced a partnership with U.S. Bancorp Impact Finance, two board appointments, and new executives in finance, people operations, and customer success.</p>
+      <div class="links"><a href="https://www.resilia.com/press-releases/tech-for-good-innovator-resilia-partners-with-us-bank-to-help-strengthen-bipoc-led-community-development-nonprofits" target="_blank" rel="noopener">U.S. Bank partnership</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-hires-new-finance-people-operations-and-customer-success-executives-to-accelerate-growth" target="_blank" rel="noopener">Executive hires</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-welcomes-two-new-board-of-directors-members-as-company-expands" target="_blank" rel="noopener">Board appointments</a></div>
+    </article>
+
+  </div>
+  <p class="w-note">Speech and remarks samples available on request</p>
+</section>
+
+<!-- 4 · how i see it -->
 <section class="scene" id="how" aria-label="How I see it">
   <div class="stage">
     <div class="topo"></div>
     <h2 data-anim="drop" style="--d:250ms">How I see it</h2>
     <div class="text">
-      <p data-anim="rise" style="--d:400ms">Every piece has someone on the other end, and I picture them first. Maybe that's someone scrolling past a new collection on their phone, or a parent reading a flyer in a clinic waiting room with a toddler on their lap. Either way, my job is to make the important thing easy to spot and fun to look at. And I like work people can hold.</p>
-      <p data-anim="rise" style="--d:520ms">I don't do it alone. The best work I've made came out of a room full of opinions, and I like it that way. I ask a lot of questions up front, share rough versions early, and keep checking we're solving the right problem. Hand me a round of edits and I'll say thank you and mean it. A good note makes the piece better, and I'd rather hear it now than after it prints.</p>
-      <p data-anim="rise" style="--d:640ms">Words are part of the job too. I write and edit copy alongside the design, so the headline, the layout, and the call to action get decided together. When something's outside what I know, I say so and go find the person who does. If the parent in the waiting room reads the whole flyer, I did my job.</p>
+      <p data-anim="rise" style="--d:400ms">Every piece has someone on the other end, and I picture them first. Maybe that's a funder weighing a grant, a reporter on deadline, or a parent reading a flyer in a clinic waiting room. My job is to make the important thing easy to find and worth their time. That takes editorial judgment, which mostly means knowing what the story is and what can wait.</p>
+      <p data-anim="rise" style="--d:520ms">I don't do it alone. I sit down with the researchers, policy staff, and program leads who know the subject cold, ask a lot of questions, and share rough drafts early. Hand me a round of edits and I'll say thank you and mean it. I lead my team the same way. I set clear priorities and standards, then give people room to use their own judgment.</p>
+      <p data-anim="rise" style="--d:640ms">Then I plan it as one story. A speech, a report, and an event should sound like one organization, so I keep the messaging, voice, and style guidance that hold them together. I design too, so the headline and the layout get decided together. If the parent in the waiting room reads the whole flyer, I did my job.</p>
     </div>
   </div>
 </section>
 
-<!-- 4 · work -->
-<section class="scene cream flow" id="work" aria-label="Recent work">
+<!-- 5 · work -->
+<section class="scene cream flow" id="work" aria-label="Design and brand work">
   <div class="work-head">
     <div class="topo"></div>
-    <h2 data-anim="drop" style="--d:150ms">Recent work</h2>
+    <h2 data-anim="drop" style="--d:150ms">Design &amp; brand work</h2>
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Strategy</span><span>Presentation design</span><span>Information design</span><span>Content &amp; copy</span><span>Earned media</span><span>Brand</span><span>Patterns &amp; product</span><span>Campaigns</span><span>Print</span><span>Art direction</span><span>Events &amp; signage</span><span>Digital &amp; motion</span><span>English &amp; Spanish</span><span>Strategy</span><span>Presentation design</span><span>Information design</span><span>Content &amp; copy</span><span>Earned media</span><span>Brand</span><span>Patterns &amp; product</span><span>Campaigns</span><span>Print</span><span>Art direction</span><span>Events &amp; signage</span><span>Digital &amp; motion</span><span>English &amp; Spanish</span></div></div>
   </div>
   <p class="work-intro" data-anim="rise" style="--d:300ms">Thirteen pieces from the last few years. Each one started as a message that had to land fast, and grew into a family of pieces that still looks like one brand. Click any of them to look closer.</p>
@@ -409,11 +531,11 @@ body.lb-open{overflow:hidden}
     </figure>
     <figure class="tile" data-anim="rise" style="--d:100ms">
       <img class="zoom" src="img/work/naturegap.jpg" data-full="img/full/naturegap-cover.jpg" alt="The Nature Gap bifold brochure, cover" width="1500" height="1000" loading="lazy" decoding="async">
-      <figcaption><span class="t-meta">Campaign &middot; The Nature Gap</span><strong>A research report, folded for legislators</strong><span class="t-desc">Bifold built on the 3&times; nature-deprivation stat. The launch pitched 14+ national outlets and earned 12 placements, including Inside Climate News, Sierra, and a Mountain West News Bureau story that ran on nine public radio stations.</span></figcaption>
+      <figcaption><span class="t-meta">Campaign &middot; The Nature Gap</span><strong>A research report, folded for legislators</strong><span class="t-desc">Bifold built on the 3&times; nature-deprivation stat. The launch pitched 14+ national outlets and earned 15 placements, including Inside Climate News, Sierra, and a Mountain West News Bureau story that ran on at least 12 public radio stations.</span></figcaption>
     </figure>
     <figure class="tile" data-anim="rise">
       <img class="zoom" src="img/work/myvaccine.jpg" data-full="img/full/myvaccine-board.jpg" alt="A hand holds up a phone showing the myVaccine record screen in the State of Colorado's myColorado app" width="1500" height="1000" loading="lazy" decoding="async">
-      <figcaption><span class="t-meta">Digital campaign &middot; myColorado, State of Colorado</span><strong>A vaccine card that lives in your phone</strong><span class="t-desc">Launch creative for myVaccine, the COVID-19 record feature in the state's myColorado app. I ran the statewide campaign and made these mockups, which carried the feature through staff training, partner materials, and the public social posts. Click to see the flow.</span></figcaption>
+      <figcaption><span class="t-meta">Digital campaign &middot; myColorado, State of Colorado</span><strong>A vaccine card that lives in your phone</strong><span class="t-desc">Launch creative for myVaccine, the COVID-19 record feature in the state's myColorado app. I ran the statewide campaign and made these mockups, which we used in staff training, partner materials, and the public social posts. Click to see the flow.</span></figcaption>
     </figure>
     <figure class="tile" data-anim="rise">
       <img class="zoom" src="img/work/edventure.jpg" data-full="img/work/edventure.jpg" alt="Two photos from the EdVenture Day shoot: a young woman weaving a basket, and a child on a blanket in the park" width="1500" height="1000" loading="lazy" decoding="async">
@@ -432,65 +554,6 @@ body.lb-open{overflow:hidden}
       <figcaption><span class="t-meta">Digital &middot; Justice Outside website, 2025</span><strong>Led the redesign, still run the edits</strong><span class="t-desc">Content, photo direction, and page reviews. I managed the web designer who built it and trained our staff to use it. At Resilia, my social series and landing pages helped grow Facebook engagement 43.7% against a 10% goal.</span></figcaption>
     </figure>
   </div>
-</section>
-
-<!-- 5 · writing -->
-<section class="scene flow" id="writing" aria-label="Writing">
-  <div class="work-head">
-    <div class="topo"></div>
-    <h2 data-anim="drop" style="--d:150ms">The <em>writing</em></h2>
-    <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Press releases</span><span>Executive voice</span><span>Ghostwriting</span><span>Technical writing</span><span>Reporter briefs</span><span>Earned media</span><span>English &amp; Spanish</span><span>Press releases</span><span>Executive voice</span><span>Ghostwriting</span><span>Technical writing</span><span>Reporter briefs</span><span>Earned media</span><span>English &amp; Spanish</span></div></div>
-  </div>
-  <p class="work-intro" data-anim="rise" style="--d:300ms">Selected work in news writing, executive communications, technical storytelling, and media relations. These samples show how I explain complex subjects, write for different audiences, and prepare stories for publication.</p>
-  <div class="wgrid">
-
-    <article class="wcard" data-anim="rise">
-      <span class="num">01</span>
-      <span class="t-meta">Press release &amp; earned media &middot; Justice Outside &middot; 2026</span>
-      <h3>Making national research newsworthy</h3>
-      <p>Wrote the Nature Gap launch release around three findings journalists could quickly understand and use. Served as media contact and coordinated outreach for the national report.</p>
-      <p class="proof"><b>Result</b>The broader campaign generated 12 earned media placements across four stories, including coverage by Inside Climate News, Sierra, National Parks Traveler, and nine Mountain West public radio stations.</p>
-      <div class="links"><a href="https://justiceoutside.org/the-nature-gap-communities-of-color-and-those-with-low-incomes-are-bearing-the-brunt-of-americas-nature-loss/" target="_blank" rel="noopener">Nature Gap launch release</a></div>
-    </article>
-
-    <article class="wcard" data-anim="rise" style="--d:100ms">
-      <span class="num">02</span>
-      <span class="t-meta">Corporate press releases &middot; Resilia (B2B SaaS) &middot; 2023</span>
-      <h3>Announcing growth for a venture-backed technology company</h3>
-      <p>Wrote corporate announcements for Resilia, a SaaS platform for nonprofits and their funders, in the year after its $35M Series B. They announced a partnership with U.S. Bancorp Impact Finance, two board appointments, and new executives in finance, people operations, and customer success.</p>
-      <div class="links"><a href="https://www.resilia.com/press-releases/tech-for-good-innovator-resilia-partners-with-us-bank-to-help-strengthen-bipoc-led-community-development-nonprofits" target="_blank" rel="noopener">U.S. Bank partnership</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-hires-new-finance-people-operations-and-customer-success-executives-to-accelerate-growth" target="_blank" rel="noopener">Executive hires</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-welcomes-two-new-board-of-directors-members-as-company-expands" target="_blank" rel="noopener">Board appointments</a></div>
-    </article>
-
-    <article class="wcard" data-anim="rise">
-      <span class="num">03</span>
-      <span class="t-meta">Technical communications &middot; Colorado OIT</span>
-      <h3>Translating complex technology for public audiences</h3>
-      <p>Led the writing on national award nominations for two features in the state's myColorado app, Colorado Digital ID and myVaccine Record. Each one explained how the technology worked, who adopted it, and why it mattered to residents and public-sector stakeholders.</p>
-      <p class="proof"><b>Result</b>Nominations I led earned nine state and national technology awards.</p>
-      <div class="links"><a href="https://www.nascio.org/awards-library/awards/bolstering-law-enforcement-safety-with-colorado-digital-id" target="_blank" rel="noopener">Colorado Digital ID</a><a class="ghost" href="https://www.nascio.org/awards-library/awards/myvaccine-record" target="_blank" rel="noopener">myVaccine Record</a></div>
-    </article>
-
-    <article class="wcard" data-anim="rise" style="--d:100ms">
-      <span class="num">04</span>
-      <span class="t-meta">Executive thought leadership &middot; Justice Outside &amp; Peak Vista</span>
-      <h3>Writing in an executive's voice</h3>
-      <p>Ghostwrote articles, op-eds, speeches, and remarks for CEOs, including the LinkedIn essay series <em>Kim's Reflections</em> at Justice Outside and a Peak Vista CEO op-ed published in The Gazette, Colorado Springs' daily newspaper. Each piece had to sound like the executive and hold the organization's position.</p>
-      <p class="proof"><b>Experience</b>Ghostwriting for three CEOs across nonprofit, healthcare, and technology organizations.</p>
-      <div class="links"><a href="https://gazette.com/2018/08/12/guest-column-peak-vista-no-longer-a-well-kept-secret-fd1d0dce-9ca5-11e8-a2f2-ebd908485284/" target="_blank" rel="noopener">Gazette CEO op-ed</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-advocate-communities-them-justice-outside-vqtac/" target="_blank" rel="noopener">We advocate with them</a><a class="ghost" href="https://www.linkedin.com/pulse/we-do-lead-single-issue-lives-philanthropy-still-acting-iklnc/" target="_blank" rel="noopener">Single-issue lives</a></div>
-    </article>
-
-    <article class="wcard wide" data-anim="rise">
-      <span class="num">05</span>
-      <span class="t-meta">Media relations &middot; Reporter briefing &amp; interview preparation</span>
-      <h3>Preparing spokespeople for national and regional media</h3>
-      <div class="flow-steps" aria-label="Process"><span>Pitch</span><i>&rarr;</i><span>Reporter brief</span><i>&rarr;</i><span>Interview</span><i>&rarr;</i><span>Story</span></div>
-      <p>Wrote interview briefs tailored to each reporter's beat, audience, and deadline. Each brief covered the data to cite, regional examples, likely questions, and short talking points.</p>
-      <p class="proof"><b>Result</b>Prepared senior leaders for a January 2025 Associated Press story and a 2026 Mountain West News Bureau report that ran on nine public radio stations.</p>
-      <div class="links"><a href="https://www.wwno.org/coastal-desk/2025-01-28/in-policy-reversal-trump-eliminates-help-for-black-and-latino-communities-hit-harder-by-pollution" target="_blank" rel="noopener">Associated Press coverage</a><a class="ghost" href="https://www.kunr.org/local-stories/2026-03-12/report-nature-loss-pollution-development-western-communities" target="_blank" rel="noopener">Mountain West News Bureau coverage</a></div>
-    </article>
-
-  </div>
-  <p class="w-note">Redacted reporter briefing samples available on request</p>
 </section>
 
 <!-- 9 · thank you -->
@@ -589,7 +652,7 @@ body.lb-open{overflow:hidden}
   // Work tiles animate in one by one as they reach the viewport.
   if('IntersectionObserver' in window){
     var tio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); tio.unobserve(e.target); } }); },{rootMargin:'0px 0px -12% 0px'});
-    document.querySelectorAll('#work .tile, #work .work-intro, #writing .wcard, #writing .work-intro').forEach(function(t){ tio.observe(t); });
+    document.querySelectorAll('#work .tile, #work .work-intro, #writing .wcard, #writing .work-intro, #writing .pull').forEach(function(t){ tio.observe(t); });
   } else { document.querySelectorAll('#work [data-anim], #writing [data-anim]').forEach(function(t){ t.classList.add('in'); }); }
   document.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click',function(ev){ ev.preventDefault(); stop(); var t=document.querySelector(a.getAttribute('href')); if(t) window.scrollTo({top:t.offsetTop,behavior:reduce?'auto':'smooth'}); }); });
 
