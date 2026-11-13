@@ -182,7 +182,7 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 .ba-col.after{background:var(--paper);border-color:var(--paper)}
 .ba-col p{max-width:none!important;font-size:1rem;line-height:1.5}
 .ba-col.after p{color:var(--ink)}
-.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.docs{display:grid;grid-template-columns:repeat(2,minmax(0,11.5rem));gap:1.2rem;justify-content:start}
 .docs a{display:grid;gap:.55rem;align-content:start;text-decoration:none;color:var(--paper);font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;line-height:1.35}
 .docs img{width:100%;height:auto;border-radius:.2rem;box-shadow:0 .5rem 1.2rem rgba(0,0,0,.35);transition:transform .3s var(--ease)}
 .docs a:hover img,.docs a:focus-visible img{transform:translateY(-.25rem)}
@@ -191,6 +191,20 @@ h1,h2{margin:0;font-family:var(--display);font-stretch:62.5%;font-weight:600;lin
 .eg p{font-style:italic;color:var(--paper)}
 .ba-lbl{display:block;margin-bottom:.7rem;font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#e39a63}
 .ba-col.after .ba-lbl{color:var(--rust)}
+.stats{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:1.6rem;max-width:80rem;margin:0 auto 3.6rem;padding:0 2rem}
+.stats li{display:grid;gap:.5rem;align-content:start;padding-top:1rem;border-top:.12rem solid var(--rust)}
+.stats b{font-family:var(--display);font-stretch:62.5%;font-weight:500;font-size:4.2rem;line-height:.9;color:var(--rust)}
+.stats span{font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;color:var(--paper)}
+.chain{list-style:none;counter-reset:step;display:grid;grid-template-columns:repeat(6,1fr);gap:1.4rem;margin:.9rem 0 .3rem;padding:0}
+.chain li{position:relative;counter-increment:step;display:grid;gap:.35rem;align-content:start;padding-top:1.5rem;border-top:.12rem solid var(--rust)}
+.chain li::before{content:counter(step);position:absolute;left:0;top:-.95rem;width:1.8rem;height:1.8rem;border-radius:50%;background:var(--rust);color:var(--paper);font-family:var(--mono);font-weight:800;font-size:.85rem;display:grid;place-items:center}
+.chain .when{font-family:var(--mono);font-stretch:80%;font-weight:700;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#e39a63}
+.chain strong{font-family:var(--display);font-stretch:62.5%;font-weight:600;font-size:1.55rem;line-height:1.05;color:var(--paper)}
+.chain li>span:last-child{font-size:.95rem;line-height:1.42;color:#dcd7cb}
+.mw{display:grid;gap:.8rem;align-content:start}
+.mw p{max-width:none!important}
+.contact .ln{padding:.55em 1em;border:.1rem solid var(--ink);border-radius:.2rem;color:var(--ink);text-decoration:none;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.8em}
+.contact .ln:hover,.contact .ln:focus-visible{background:var(--ink);color:var(--paper);outline:none}
 .w-note{max-width:60rem;margin:3rem auto 0;padding:0 2rem;text-align:center;font-family:var(--mono);font-stretch:80%;font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--paper);opacity:.7}
 
 /* ---------- 9 · thank you ---------- */
@@ -327,6 +341,10 @@ body.lb-open{overflow:hidden}
   .wcard h3{font-size:1.45rem}
   .wcard p,.wcard .proof{font-size:.98rem}
   .w-note{text-align:left;padding:0 20px;font-size:.7rem;margin-top:24px}
+  .stats{grid-template-columns:1fr 1fr;gap:18px;padding:0 20px;margin-bottom:28px}
+  .stats b{font-size:2.6rem}
+  .stats span{font-size:.66rem}
+  .chain{grid-template-columns:1fr;gap:26px;margin-top:18px}
   .pull{text-align:left;padding:0 20px;margin-bottom:28px}
   .pull blockquote{font-size:1.45rem}
   .pull figcaption{font-size:.68rem}
@@ -400,6 +418,13 @@ body.lb-open{overflow:hidden}
     <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>Executive voice</span><span>Editorial planning</span><span>Blog series</span><span>Flagship reports</span><span>Voice &amp; messaging</span><span>Events as editorial</span><span>Press releases</span><span>Earned media</span><span>Technical writing</span><span>English &amp; Spanish</span><span>Executive voice</span><span>Editorial planning</span><span>Blog series</span><span>Flagship reports</span><span>Voice &amp; messaging</span><span>Events as editorial</span><span>Press releases</span><span>Earned media</span><span>Technical writing</span><span>English &amp; Spanish</span></div></div>
   </div>
   <p class="work-intro" data-anim="rise" style="--d:300ms">Writing is where most of my work starts. These samples show how I plan what an organization publishes and how I make complex subjects clear, whether the byline is mine or a CEO's.</p>
+  <ul class="stats" data-anim="rise" aria-label="Results at a glance">
+    <li><b>3</b><span>CEOs I've written for</span></li>
+    <li><b>15</b><span>earned media placements for one report</span></li>
+    <li><b>51%</b><span>open rate on the email program I launched</span></li>
+    <li><b>100%</b><span>of staff confident explaining our message</span></li>
+    <li><b>246</b><span>registrants for one webinar</span></li>
+  </ul>
   <figure class="pull" data-anim="rise">
     <blockquote>&ldquo;I have spent years watching our communities get carved up into funding silos. And I have watched what happens to the people living at those intersections, the ones whose lives don't fit neatly into a single grant category. They fall through. Not because anyone intended harm. But because we lost sight of the goal.&rdquo;</blockquote>
     <figcaption>From acceptance remarks I wrote for Justice Outside's President &amp; CEO &middot; ABFE Institutional Award for Philanthropic Leadership, April 2026</figcaption>
@@ -424,6 +449,21 @@ body.lb-open{overflow:hidden}
       <div class="links"><a href="samples/editorial-calendar-sample.pdf" target="_blank" rel="noopener">See a sample month</a><a class="ghost" href="https://justiceoutside.org/resources-create-possibility/" target="_blank" rel="noopener">Blog 1: Economic opportunity</a><a class="ghost" href="https://justiceoutside.org/when-people-can-heal-investing-in-health-and-wellness/" target="_blank" rel="noopener">Blog 2: Health and wellness</a><a class="ghost" href="https://justiceoutside.org/when-people-move-together-investing-in-grassroots-power/" target="_blank" rel="noopener">Blog 3: Grassroots power</a></div>
     </article>
 
+    <article class="wcard wide ng" data-anim="rise">
+      <span class="t-meta">One report, six pieces &middot; The Nature Gap &middot; 2026</span>
+      <h3>How one research report became nine months of work</h3>
+      <p>The Nature Gap is a national study of who lives near nature and who doesn't, co-authored with the Center for American Progress and Conservation Science Partners. I planned what came after the data, so each piece set up the next.</p>
+      <ol class="chain">
+        <li><span class="when">Feb 23</span><strong>The report</strong><span>Helped scope it, chose which grantee partners to feature, and edited the final piece with both co-authors.</span></li>
+        <li><span class="when">Feb 24</span><strong>Press release</strong><span>Built on three findings a reporter can use right away. 14 national outlets pitched.</span></li>
+        <li><span class="when">Feb to Mar</span><strong>Reporter briefs</strong><span>Three briefs, each written for one reporter's beat, to prepare our Chief Program Officer.</span></li>
+        <li><span class="when">Feb to Apr</span><strong>Coverage</strong><span>Four stories and 15 placements, including at least 12 public radio stations.</span></li>
+        <li><span class="when">July</span><strong>Legislator brochure</strong><span>The headline finding, written and designed as a bifold for legislators.</span></li>
+        <li><span class="when">Aug to Nov</span><strong>Webinar series</strong><span>Three sessions for funders, community leaders, and policy advocates. 246 registered for the first.</span></li>
+      </ol>
+      <p class="proof"><b>Also</b>In March, I used the coverage to open a round of funder letters in the CEO's voice.</p>
+    </article>
+
     <article class="wcard" data-anim="rise">
       <span class="num">03</span>
       <span class="t-meta">Flagship content &middot; Justice Outside &middot; 2025 to 2026</span>
@@ -437,13 +477,12 @@ body.lb-open{overflow:hidden}
       <span class="num">04</span>
       <span class="t-meta">Voice, messaging &amp; standards &middot; Justice Outside</span>
       <h3>One message, taught to nine departments</h3>
-      <p>Built Justice Outside's impact narrative around its power-building model (Advocate, Fund, Build) and taught staff to use it. I interviewed each director, then wrote and designed three guides: one with a section for each of nine departments, one for board members, and a cheat sheet. I trained every team and held office hours. I also led the rebrand and built, with our Chief Program Officer, the Rapid Response Decision Rubric that leadership and the board's Program Committee adopted for deciding when the organization speaks on breaking news.</p>
+      <p>Built Justice Outside's impact narrative around its power-building model (Advocate, Fund, Build) and taught staff to use it. I interviewed each director, then wrote and designed two guides: one with a section for each of nine departments and one for board members. I trained every team and held office hours. I also led the rebrand and built, with our Chief Program Officer, the Rapid Response Decision Rubric that leadership and the board's Program Committee adopted for deciding when the organization speaks on breaking news.</p>
       <div class="eg"><span class="ba-lbl">Example &middot; the 30-second pitch I wrote for Finance Operations</span><p>&ldquo;I work in finance operations at Justice Outside. My job is to make sure trust-based funding reaches grantee partners on time and without unnecessary bureaucracy. When a grantee receives funding without onerous compliance demands, that's finance operations making power-building real.&rdquo;</p></div>
       <p class="proof"><b>Result</b>100% of staff reported confidence using the model, against a 90% goal.</p>
       <div class="docs">
         <a href="samples/power-building-training-guide.pdf" target="_blank" rel="noopener"><img src="img/work/pb-guide.jpg" alt="Cover of How to Talk About Power-Building, a department-by-department training guide" width="544" height="704" loading="lazy" decoding="async"><span>Department training guide &middot; 15 pages</span></a>
         <a href="samples/power-building-board-guide.pdf" target="_blank" rel="noopener"><img src="img/work/pb-board.jpg" alt="Cover of Power-Building: A Board Member's Guide" width="544" height="704" loading="lazy" decoding="async"><span>Board member's guide &middot; 10 pages</span></a>
-        <a href="samples/power-building-cheat-sheet.pdf" target="_blank" rel="noopener"><img src="img/work/pb-cheat.jpg" alt="Cover of the Power-Building cheat sheet" width="544" height="704" loading="lazy" decoding="async"><span>Cheat sheet &middot; 3 pages</span></a>
       </div>
     </article>
 
@@ -484,21 +523,14 @@ body.lb-open{overflow:hidden}
       <div class="links"><a href="samples/reporter-brief-sample.pdf" target="_blank" rel="noopener">Read a reporter brief (redacted)</a><a class="ghost" href="https://www.wwno.org/coastal-desk/2025-01-28/in-policy-reversal-trump-eliminates-help-for-black-and-latino-communities-hit-harder-by-pollution" target="_blank" rel="noopener">Associated Press coverage</a><a class="ghost" href="https://www.kunr.org/local-stories/2026-03-12/report-nature-loss-pollution-development-western-communities" target="_blank" rel="noopener">Mountain West News Bureau coverage</a></div>
     </article>
 
-    <article class="wcard" data-anim="rise">
+    <article class="wcard wide more" data-anim="rise">
       <span class="num">08</span>
-      <span class="t-meta">Technical communications &middot; Colorado OIT</span>
-      <h3>Translating complex technology for public audiences</h3>
-      <p>Led the writing on national award nominations for two features in the state's myColorado app, Colorado Digital ID and myVaccine Record. Each one explained how the technology worked, who adopted it, and why it mattered to residents and public-sector stakeholders.</p>
-      <p class="proof"><b>Result</b>Nominations I led earned nine state and national technology awards.</p>
-      <div class="links"><a href="https://www.nascio.org/awards-library/awards/bolstering-law-enforcement-safety-with-colorado-digital-id" target="_blank" rel="noopener">Colorado Digital ID</a><a class="ghost" href="https://www.nascio.org/awards-library/awards/myvaccine-record" target="_blank" rel="noopener">myVaccine Record</a></div>
-    </article>
-
-    <article class="wcard" data-anim="rise" style="--d:100ms">
-      <span class="num">09</span>
-      <span class="t-meta">Corporate press releases &middot; Resilia (B2B SaaS) &middot; 2023</span>
-      <h3>Announcing growth for a venture-backed technology company</h3>
-      <p>Wrote corporate announcements for Resilia, a SaaS platform for nonprofits and their funders, in the year after its $35M Series B. They announced a partnership with U.S. Bancorp Impact Finance, two board appointments, and new executives in finance, people operations, and customer success.</p>
-      <div class="links"><a href="https://www.resilia.com/press-releases/tech-for-good-innovator-resilia-partners-with-us-bank-to-help-strengthen-bipoc-led-community-development-nonprofits" target="_blank" rel="noopener">U.S. Bank partnership</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-hires-new-finance-people-operations-and-customer-success-executives-to-accelerate-growth" target="_blank" rel="noopener">Executive hires</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-welcomes-two-new-board-of-directors-members-as-company-expands" target="_blank" rel="noopener">Board appointments</a></div>
+      <span class="t-meta">More writing &middot; Technical and corporate</span>
+      <h3>Technical and corporate writing</h3>
+      <div class="ba-cols">
+        <div class="mw"><span class="ba-lbl">Technical communications &middot; Colorado OIT</span><p>Led the writing on national award nominations for Colorado Digital ID and myVaccine Record, two features in the state's myColorado app. Each one explained how the technology worked and why it mattered to residents. The nominations earned nine state and national technology awards.</p><div class="links"><a href="https://www.nascio.org/awards-library/awards/bolstering-law-enforcement-safety-with-colorado-digital-id" target="_blank" rel="noopener">Colorado Digital ID</a><a class="ghost" href="https://www.nascio.org/awards-library/awards/myvaccine-record" target="_blank" rel="noopener">myVaccine Record</a></div></div>
+        <div class="mw"><span class="ba-lbl">Corporate press releases &middot; Resilia &middot; 2023</span><p>Wrote announcements for Resilia, a SaaS platform for nonprofits and their funders, in the year after its $35M Series B: a partnership with U.S. Bancorp Impact Finance, two board appointments, and three executive hires.</p><div class="links"><a href="https://www.resilia.com/press-releases/tech-for-good-innovator-resilia-partners-with-us-bank-to-help-strengthen-bipoc-led-community-development-nonprofits" target="_blank" rel="noopener">U.S. Bank partnership</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-hires-new-finance-people-operations-and-customer-success-executives-to-accelerate-growth" target="_blank" rel="noopener">Executive hires</a><a class="ghost" href="https://www.resilia.com/press-releases/resilia-welcomes-two-new-board-of-directors-members-as-company-expands" target="_blank" rel="noopener">Board appointments</a></div></div>
+      </div>
     </article>
 
   </div>
@@ -585,6 +617,7 @@ body.lb-open{overflow:hidden}
     <div class="contact" data-anim="rise" style="--d:800ms">
       <span class="email" id="email">brencspector@gmail.com</span>
       <button type="button" id="copyBtn">Copy email</button>
+      <a class="ln" href="https://www.linkedin.com/in/bren-spector-501559175/" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <p class="credit" data-anim="rise" style="--d:900ms">Designed and built by Bren Spector</p>
   </div>
@@ -665,7 +698,7 @@ body.lb-open{overflow:hidden}
   // Work tiles animate in one by one as they reach the viewport.
   if('IntersectionObserver' in window){
     var tio=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); tio.unobserve(e.target); } }); },{rootMargin:'0px 0px -12% 0px'});
-    document.querySelectorAll('#work .tile, #work .work-intro, #writing .wcard, #writing .work-intro, #writing .pull').forEach(function(t){ tio.observe(t); });
+    document.querySelectorAll('#work .tile, #work .work-intro, #writing .wcard, #writing .work-intro, #writing .pull, #writing .stats').forEach(function(t){ tio.observe(t); });
   } else { document.querySelectorAll('#work [data-anim], #writing [data-anim]').forEach(function(t){ t.classList.add('in'); }); }
   document.querySelectorAll('.menu a').forEach(function(a){ a.addEventListener('click',function(ev){ ev.preventDefault(); stop(); var t=document.querySelector(a.getAttribute('href')); if(t) window.scrollTo({top:t.offsetTop,behavior:reduce?'auto':'smooth'}); }); });
 
